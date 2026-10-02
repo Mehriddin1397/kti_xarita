@@ -19,6 +19,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        if (request()->server('HTTP_X_FORWARDED_PROTO') === 'https'
+            || request()->header('X-Forwarded-Proto') === 'https'
+            || request()->server('HTTPS') === 'on'
+            || request()->isSecure()) {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
     }
 }
