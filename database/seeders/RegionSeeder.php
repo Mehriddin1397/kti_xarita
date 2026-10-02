@@ -1,0 +1,173 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Region;
+use Illuminate\Database\Seeder;
+
+class RegionSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $regions = [
+            [
+                'name' => 'Qoraqalpog\'iston Respublikasi',
+                'slug' => 'karakalpakstan',
+                'capital' => 'Nukus',
+                'population' => '2 042 254',
+                'area' => '166 600',
+                'districts_count' => 16,
+                'description' => 'Qoraqalpog\'iston Respublikasi — O\'zbekiston Respublikasi tarkibidagi suveren respublika. Mamlakatning shimoli-g\'arbiy qismida joylashgan.',
+                'color' => '#2C3E6B',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Xorazm viloyati',
+                'slug' => 'khorezm',
+                'capital' => 'Urganch',
+                'population' => '2 060 791',
+                'area' => '6 300',
+                'districts_count' => 11,
+                'description' => 'Xorazm viloyati — O\'zbekistonning shimoli-g\'arbiy qismida joylashgan qadimiy viloyat.',
+                'color' => '#2C3E6B',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Buxoro viloyati',
+                'slug' => 'bukhara',
+                'capital' => 'Buxoro',
+                'population' => '2 097 496',
+                'area' => '39 400',
+                'districts_count' => 11,
+                'description' => 'Buxoro viloyati — O\'zbekistonning markaziy-g\'arbiy qismida joylashgan tarixiy va madaniy markaz.',
+                'color' => '#2C3E6B',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Navoiy viloyati',
+                'slug' => 'navoi',
+                'capital' => 'Navoiy',
+                'population' => '1 103 395',
+                'area' => '110 800',
+                'districts_count' => 8,
+                'description' => 'Navoiy viloyati — O\'zbekistonning markaziy qismida joylashgan, boy sanoat va tabiiy resurslarga ega hudud.',
+                'color' => '#2C3E6B',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Samarqand viloyati',
+                'slug' => 'samarkand',
+                'capital' => 'Samarqand',
+                'population' => '4 363 787',
+                'area' => '16 400',
+                'districts_count' => 14,
+                'description' => 'Samarqand viloyati — O\'zbekistonning janubiy-markaziy qismida joylashgan yirik tarixiy va iqtisodiy viloyat.',
+                'color' => '#2C3E6B',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Qashqadaryo viloyati',
+                'slug' => 'kashkadarya',
+                'capital' => 'Qarshi',
+                'population' => '3 688 270',
+                'area' => '28 400',
+                'districts_count' => 13,
+                'description' => 'Qashqadaryo viloyati — O\'zbekistonning janubiy qismida, Qashqadaryo havzasida joylashgan viloyat.',
+                'color' => '#2C3E6B',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Surxondaryo viloyati',
+                'slug' => 'surkhandarya',
+                'capital' => 'Termiz',
+                'population' => '2 992 344',
+                'area' => '20 100',
+                'districts_count' => 14,
+                'description' => 'Surxondaryo viloyati — O\'zbekistonning eng janubiy qismida joylashgan chegara viloyati.',
+                'color' => '#2C3E6B',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Jizzax viloyati',
+                'slug' => 'jizzakh',
+                'capital' => 'Jizzax',
+                'population' => '1 554 972',
+                'area' => '20 500',
+                'districts_count' => 12,
+                'description' => 'Jizzax viloyati — O\'zbekistonning markaziy qismida joylashgan viloyat.',
+                'color' => '#2C3E6B',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Sirdaryo viloyati',
+                'slug' => 'syrdarya',
+                'capital' => 'Guliston',
+                'population' => '939 200',
+                'area' => '4 300',
+                'districts_count' => 8,
+                'description' => 'Sirdaryo viloyati — O\'zbekistonning sharqiy-markaziy qismida, Sirdaryo daryosi bo\'yida joylashgan viloyat.',
+                'color' => '#2C3E6B',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Toshkent viloyati',
+                'slug' => 'tashkent_region',
+                'capital' => 'Nurafshon',
+                'population' => '3 166 428',
+                'area' => '15 300',
+                'districts_count' => 15,
+                'description' => 'Toshkent viloyati — O\'zbekistonning shimoli-sharqiy qismida joylashgan iqtisodiy rivojlangan viloyat.',
+                'color' => '#2C3E6B',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Toshkent shahri',
+                'slug' => 'tashkent_city',
+                'capital' => 'Toshkent',
+                'population' => '3 327 964',
+                'area' => '435',
+                'districts_count' => 12,
+                'description' => 'Toshkent shahri — O\'zbekiston Respublikasining poytaxti, mamlakatning eng yirik megapolisi va iqtisodiy markazi.',
+                'color' => '#2C3E6B',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Namangan viloyati',
+                'slug' => 'namangan',
+                'capital' => 'Namangan',
+                'population' => '3 178 985',
+                'area' => '7 900',
+                'districts_count' => 12,
+                'description' => 'Namangan viloyati — Farg\'ona vodiysining shimoli-g\'arbiy qismida joylashgan viloyat.',
+                'color' => '#2C3E6B',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Farg\'ona viloyati',
+                'slug' => 'fergana',
+                'capital' => 'Farg\'ona',
+                'population' => '4 208 781',
+                'area' => '6 800',
+                'districts_count' => 15,
+                'description' => 'Farg\'ona viloyati — Farg\'ona vodiysining janubiy qismida joylashgan aholi zich viloyat.',
+                'color' => '#2C3E6B',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Andijon viloyati',
+                'slug' => 'andijan',
+                'capital' => 'Andijon',
+                'population' => '3 512 037',
+                'area' => '4 200',
+                'districts_count' => 14,
+                'description' => 'Andijon viloyati — Farg\'ona vodiysining sharqiy qismida joylashgan eng aholi zich viloyat.',
+                'color' => '#2C3E6B',
+                'is_active' => true,
+            ],
+        ];
+
+        foreach ($regions as $region) {
+            Region::updateOrCreate(['slug' => $region['slug']], $region);
+        }
+    }
+}
