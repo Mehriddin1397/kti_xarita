@@ -16,12 +16,58 @@
             if (savedScale) {
                 document.documentElement.style.setProperty('--font-scale', savedScale);
             }
+            var savedTheme = localStorage.getItem('kti_theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
         } catch (e) {}
     </script>
     @stack('styles')
 </head>
 <body>
     @yield('content')
+    <script>
+        (function() {
+            function updateThemeUI(theme) {
+                var btn = document.getElementById('theme-toggle-btn');
+                if (!btn) return;
+                var iconSun = btn.querySelector('.icon-sun');
+                var iconMoon = btn.querySelector('.icon-moon');
+                var label = document.getElementById('theme-label');
+                if (theme === 'light') {
+                    if (iconSun) iconSun.style.display = 'block';
+                    if (iconMoon) iconMoon.style.display = 'none';
+                    if (label) label.textContent = 'Kunduzgi';
+                    btn.setAttribute('title', 'Kechki rejimga o\'tish');
+                } else {
+                    if (iconSun) iconSun.style.display = 'none';
+                    if (iconMoon) iconMoon.style.display = 'block';
+                    if (label) label.textContent = 'Kechki';
+                    btn.setAttribute('title', 'Kunduzgi rejimga o\'tish');
+                }
+            }
+
+            var initialTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            updateThemeUI(initialTheme);
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var curTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+                updateThemeUI(curTheme);
+
+                var btn = document.getElementById('theme-toggle-btn');
+                if (btn) {
+                    btn.addEventListener('click', function() {
+                        var oldTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+                        var newTheme = (oldTheme === 'light') ? 'dark' : 'light';
+                        document.documentElement.setAttribute('data-theme', newTheme);
+                        try {
+                            localStorage.setItem('kti_theme', newTheme);
+                        } catch(e) {}
+                        updateThemeUI(newTheme);
+                        window.dispatchEvent(new CustomEvent('themechanged', { detail: { theme: newTheme } }));
+                    });
+                }
+            });
+        })();
+    </script>
     @stack('scripts')
 </body>
 </html>
