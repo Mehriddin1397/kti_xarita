@@ -95,7 +95,7 @@
         </div>
 
         {{-- Map container --}}
-        <div class="map-container" id="map-container">
+        <div class="map-container loyiha-map-canvas" id="map-container">
 
             {{-- Sarlavha banner --}}
             <div class="map-top-banner">
@@ -126,14 +126,14 @@
                         <span class="legend-status-badge badge-completed">✓</span>
                         <div>
                             <span class="legend-item-title title-completed">Bajarilgan loyihalar (7 ta)</span>
-                            <div class="legend-item-desc">Xaritada yashil hudud va ✓ belgisi</div>
+                            <div class="legend-item-desc">To'q yashil hudud va ✓ belgisi</div>
                         </div>
                     </div>
                     <div class="legend-item">
                         <span class="legend-status-badge badge-progress">🔍</span>
                         <div>
                             <span class="legend-item-title title-progress">Bajarilayotgan loyihalar (7 ta)</span>
-                            <div class="legend-item-desc">Xarita rangi o'zgarmaydi va 🔍 belgisi</div>
+                            <div class="legend-item-desc">Och musaffo yashil va 🔍 belgisi</div>
                         </div>
                     </div>
                 </div>

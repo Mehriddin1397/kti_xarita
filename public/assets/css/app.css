@@ -651,6 +651,16 @@ html, body {
     stroke-linejoin: round;
 }
 
+#uzbekistan-loyiha-map path.region-path[data-status="completed"] {
+    fill: #10B981;
+    stroke: rgba(255, 255, 255, 0.35);
+}
+
+#uzbekistan-loyiha-map path.region-path[data-status="in_progress"] {
+    fill: #134E4A;
+    stroke: rgba(110, 231, 183, 0.4);
+}
+
 /* Region hover */
 #uzbekistan-map [data-region].region-hover,
 #uzbekistan-loyiha-map [data-region].region-hover,
@@ -4368,29 +4378,49 @@ html, body {
     stroke: #FFFFFF !important;
 }
 
+/* Tadqiqot xaritasi - Musaffo och yashil rejim */
+[data-theme="light"] .loyiha-map-canvas {
+    background: radial-gradient(ellipse 80% 75% at 50% 48%, #F0FDF4 0%, #ECFDF5 50%, #F8FAFC 100%) !important;
+}
+
 [data-theme="light"] #uzbekistan-loyiha-map path.region-path {
     stroke: #FFFFFF;
-    stroke-width: 1.5px;
+    stroke-width: 1.6px;
+    filter: drop-shadow(0 2px 8px rgba(16, 185, 129, 0.15));
 }
 
 [data-theme="light"] #uzbekistan-loyiha-map path.region-path[data-status="completed"] {
-    fill: #059669;
+    fill: #059669; /* To'q zumrad yashil (Bajarilgan) */
 }
 
 [data-theme="light"] #uzbekistan-loyiha-map path.region-path[data-status="in_progress"] {
-    fill: #475569;
+    fill: #6EE7B7; /* Musaffo och yashil / yalpiz rangi (Bajarilayotgan) */
 }
 
 [data-theme="light"] #uzbekistan-loyiha-map path.region-path:hover {
-    fill: #2563EB !important;
-    stroke: #FFFFFF !important;
+    fill: #34D399 !important;
+    stroke: #047857 !important;
 }
 
 [data-theme="light"] #uzbekistan-loyiha-map path.region-path.region-active {
-    fill: #1D4ED8 !important;
+    fill: #047857 !important;
     stroke: #FFFFFF !important;
 }
 
+/* Xarita ustidagi piktogrammalar (✓ va 🔍) */
+[data-theme="light"] .map-badge-completed circle:first-child {
+    fill: #059669 !important;
+    stroke: #FFFFFF !important;
+    stroke-width: 2.2px !important;
+}
+
+[data-theme="light"] .map-badge-inprogress circle:first-child {
+    fill: #0284C7 !important;
+    stroke: #FFFFFF !important;
+    stroke-width: 2px !important;
+}
+
+/* Asosiy statistika xaritasi tumanlari */
 [data-theme="light"] .district-path {
     fill: #475569;
     stroke: #FFFFFF;
@@ -4405,6 +4435,34 @@ html, body {
 [data-theme="light"] .district-path.district-active {
     fill: #1D4ED8 !important;
     stroke: #FFFFFF !important;
+}
+
+/* Tadqiqot bo'limi tumanlar xaritasi - Musaffo och yashil */
+[data-theme="light"] .loyiha-map-canvas .district-map-container,
+[data-theme="light"] #map-container.loyiha-map-canvas .district-map-container {
+    background: radial-gradient(ellipse 80% 75% at 50% 48%, rgba(240, 253, 244, 0.98) 0%, rgba(236, 253, 245, 0.98) 55%, rgba(248, 250, 252, 0.99) 100%) !important;
+}
+
+[data-theme="light"] .loyiha-map-canvas .district-path {
+    fill: #6EE7B7;
+    stroke: #FFFFFF;
+    stroke-width: 1.3px;
+}
+
+[data-theme="light"] .loyiha-map-canvas .district-path:hover {
+    fill: #34D399 !important;
+    stroke: #047857 !important;
+}
+
+[data-theme="light"] .loyiha-map-canvas .district-path.district-active {
+    fill: #059669 !important;
+    stroke: #FFFFFF !important;
+}
+
+[data-theme="light"] .loyiha-map-canvas .district-svg-label {
+    fill: #064E3B !important;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 5px #FFFFFF !important;
+    font-weight: 700;
 }
 
 [data-theme="light"] .region-name-label,
