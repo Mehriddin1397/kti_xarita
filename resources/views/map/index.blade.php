@@ -243,5 +243,5 @@
 @endsection
 
 @push('scripts')
-<script src="{{ asset('assets/js/map.js') }}"></script>
+<script src="{{ asset('assets/js/map.js') }}?v={{ file_exists(public_path('assets/js/map.js')) ? filemtime(public_path('assets/js/map.js')) : '1.0' }}"></script>
 @endpush

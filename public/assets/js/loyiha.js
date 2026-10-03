@@ -536,35 +536,27 @@
                 <div class="annotation-box" style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; box-shadow: var(--shadow-sm);">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
                         <div style="font-size: 12px; font-weight: 700; color: #10B981; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
-                            <span>📊</span> Расмий аннотация кўрсаткичлари
+                            <span>📊</span> QISQA KO'RSATKICHLAR
                         </div>
-                        <span style="font-size: 10.5px; background: rgba(16,185,129,0.15); color: #059669; padding: 2px 8px; border-radius: 20px; border: 1px solid rgba(16,185,129,0.3); font-weight: 600;">
-                            Ҳисобот фактологияси
-                        </span>
                     </div>
                     <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
                         <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 12px;">
-                            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 3px;">👥 Тадқиқот жамоаси</div>
+                            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 3px;">👥 TADQIQOT JAMOASI</div>
                             <div style="font-size: 12px; font-weight: 700; color: var(--text-white); line-height: 1.35;">${data.annotation.team_count || data.team}</div>
                         </div>
                         <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 12px;">
-                            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 3px;">📋 Социологик сўров</div>
+                            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 3px;">📋 Sotsiologik so‘rov</div>
                             <div style="font-size: 12px; font-weight: 700; color: var(--text-white); line-height: 1.35;">${data.annotation.respondents}</div>
                         </div>
                         <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 12px;">
-                            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 3px;">💡 Илмий таклиф ва прогноз</div>
+                            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 3px;">💡 Ilmiy taklif va prognoz</div>
                             <div style="font-size: 12px; font-weight: 700; color: var(--text-white); line-height: 1.35;">${data.annotation.proposals}</div>
                         </div>
                         <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 12px;">
-                            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 3px;">🏆 Расмий тасдиқ ва амалиёт</div>
+                            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 3px;">🏆 Loyiha e'tirofi</div>
                             <div style="font-size: 12px; font-weight: 700; color: #10B981; line-height: 1.35;">${data.annotation.certificates}</div>
                         </div>
                     </div>
-                    ${data.annotation.presentation ? `
-                        <div style="margin-top: 10px; padding: 8px 12px; background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.25); border-radius: 6px; font-size: 11.5px; color: var(--text-light); display: flex; align-items: center; gap: 6px;">
-                            <span>📢</span> <span>${data.annotation.presentation}</span>
-                        </div>
-                    ` : ''}
                 </div>
             `;
         }
@@ -575,9 +567,9 @@
             implementationHtml = `
                 <div style="margin-bottom: 16px;">
                     <div class="summary-section-title" style="margin-bottom: 8px;">
-                        <span>🏛️ Амалиётга жорий этиш ва расмий тақдимот</span>
+                        <span>🏛️ Amaliyotga joriy etish va loyiha e'tirofi</span>
                         <span class="badge" style="background: rgba(16,185,129,0.15); color: #10B981; border-color: rgba(16,185,129,0.35);">
-                            ${data.implementation.length} та босқич
+                            ${data.implementation.length} ta bosqich
                         </span>
                     </div>
                     <ul style="list-style: none; padding: 0; margin: 0;">
@@ -618,7 +610,7 @@
             <!-- Research Team / Mas'ullar -->
             <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 10px; padding: 12px 14px; margin-bottom: 16px;">
                 <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 4px; font-weight: 600;">
-                    Tadqiqotchi guruh / Mas'ul ijrochilar
+                    TADQIQOT JAMOASI
                 </div>
                 <div style="font-size: 13px; font-weight: 600; color: var(--text-white);">
                     ${data.team}
@@ -1276,7 +1268,7 @@
 
     function zoomToElement(element, callback) {
         const bbox = element.getBBox();
-        const pad = Math.max(bbox.width, bbox.height) * 0.4;
+        const pad = Math.max(bbox.width, bbox.height) * 0.70;
 
         let targetW = bbox.width + pad * 2;
         let targetH = bbox.height + pad * 2;
@@ -1375,35 +1367,27 @@
                 <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 12px; padding: 16px 18px; margin-bottom: 20px; box-shadow: var(--shadow-sm);">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
                         <div style="font-size: 13px; font-weight: 700; color: #10B981; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px;">
-                            <span style="font-size: 16px;">📊</span> Расмий илмий-амалий ҳисобот аннотацияси кўрсаткичлари
+                            <span style="font-size: 16px;">📊</span> QISQA KO'RSATKICHLAR
                         </div>
-                        <span style="font-size: 11px; background: rgba(16,185,129,0.15); color: #059669; padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(16,185,129,0.3); font-weight: 600;">
-                            Институт расмий маълумоти
-                        </span>
                     </div>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
                         <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px 14px;">
-                            <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px;">👥 Илмий тадқиқот жамоаси</div>
+                            <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px;">👥 TADQIQOT JAMOASI</div>
                             <div style="font-size: 13px; font-weight: 700; color: var(--text-white); line-height: 1.4;">${data.annotation.team_count || data.team}</div>
                         </div>
                         <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px 14px;">
-                            <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px;">📋 Социологик тадқиқот қамрови</div>
+                            <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px;">📋 Sotsiologik tadqiqot qamrovi</div>
                             <div style="font-size: 13px; font-weight: 700; color: var(--text-white); line-height: 1.4;">${data.annotation.respondents}</div>
                         </div>
                         <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px 14px;">
-                            <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px;">💡 Илмий таклиф ва диагноз</div>
+                            <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px;">💡 Ilmiy taklif va diagnoz</div>
                             <div style="font-size: 13px; font-weight: 700; color: var(--text-white); line-height: 1.4;">${data.annotation.proposals}</div>
                         </div>
                         <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px 14px;">
-                            <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px;">🏆 Расмий амалиёт далолатномалари</div>
+                            <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px;">🏆 Loyiha e'tirofi</div>
                             <div style="font-size: 13px; font-weight: 700; color: #10B981; line-height: 1.4;">${data.annotation.certificates}</div>
                         </div>
                     </div>
-                    ${data.annotation.presentation ? `
-                        <div style="margin-top: 12px; padding: 10px 14px; background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.25); border-radius: 8px; font-size: 12px; color: var(--text-light); display: flex; align-items: center; gap: 8px;">
-                            <span style="font-size: 14px;">📢</span> <span>${data.annotation.presentation}</span>
-                        </div>
-                    ` : ''}
                 </div>
             `;
         }
@@ -1414,7 +1398,7 @@
             modalImplementationHtml = `
                 <div style="margin-bottom: 20px;">
                     <h4 style="font-size: 14px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 10px;">
-                        🏛️ Амалиётга жорий этиш ва расмий тақдимот (${data.implementation.length} та босқич)
+                        🏛️ Amaliyotga joriy etish va loyiha e'tirofi (${data.implementation.length} ta bosqich)
                     </h4>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
                         ${data.implementation.map(item => `
@@ -1704,7 +1688,7 @@
         if (!pdfModal) return;
         const pdf = pdfData || {
             title: "Ilmiy loyiha hisoboti va buyrug'i",
-            number: "№ 1628-сон",
+            number: "№ 1628-son",
             size: "6.1 MB",
             pages: 15,
             url: "/loyiha/hujjat/pdf",
@@ -1714,7 +1698,7 @@
         if (pdfModalTitle) {
             pdfModalTitle.textContent = `${regionName ? regionName + ' — ' : ''}${pdf.title || 'Ilmiy loyiha hisoboti'}`;
         }
-        if (pdfTagNumber) pdfTagNumber.textContent = pdf.doc_number || pdf.number || '№ 1628-сон';
+        if (pdfTagNumber) pdfTagNumber.textContent = pdf.doc_number || pdf.number || '№ 1628-son';
         if (pdfTagSize) pdfTagSize.textContent = pdf.file_size || pdf.size || '6.1 MB';
 
         const viewUrl = pdf.url || '/loyiha/hujjat/pdf';
@@ -2131,17 +2115,17 @@
         {
             img: '/img/1.jpg',
             tag: '1-Slayd',
-            title: 'Республика бўйича жиноятлар турлари (2025 йилда қайд этилган жиноятлар — Навоий вилояти таҳлили)'
+            title: 'Respublika bo‘yicha jinoyatlar turlari (2025 yilda qayd etilgan jinoyatlar — Navoiy viloyati tahlili)'
         },
         {
             img: '/img/2.jpg',
             tag: '2-Slayd',
-            title: 'Навоий вилояти жиноятчилиги омиллари (Криминоген омиллар ва устувор йўналишлар)'
+            title: 'Navoiy viloyati jinoyatchiligi omillari (Kriminogen omillar va ustuvor yo‘nalishlar)'
         },
         {
             img: '/img/3.jpg',
             tag: '3-Slayd',
-            title: 'Таклифлар (Жиноятчилик профилактикасини кучайтириш бўйича 11 та асосий таклиф ва кутилган натижа)'
+            title: 'Takliflar (Jinoyatchilik profilaktikasini kuchaytirish bo‘yicha 11 ta asosiy taklif va kutilgan natija)'
         }
     ];
 

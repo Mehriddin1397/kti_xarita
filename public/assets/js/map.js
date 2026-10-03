@@ -412,7 +412,7 @@
         const centerX = bbox.x + bbox.width / 2;
         const centerY = bbox.y + bbox.height / 2;
 
-        const padding = 1.35;
+        const padding = 1.70;
         const zoomWidth = bbox.width * padding;
         const zoomHeight = bbox.height * padding;
 
@@ -427,7 +427,7 @@
             finalWidth = zoomHeight * targetAspect;
         }
 
-        const minSize = Math.min(origW, origH) * 0.22;
+        const minSize = Math.min(origW, origH) * 0.28;
         if (finalWidth < minSize) {
             const scale = minSize / finalWidth;
             finalWidth = minSize;

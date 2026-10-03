@@ -53,7 +53,7 @@ class LoyihaController extends Controller
                     'badge_icon' => '✓',
                     'color' => '#10B981',
                     'project_title' => 'Namangan viloyati jinoyatchiligini tadqiq qilish',
-                    'team' => 'Kriminologiya tadqiqot instituti tadqiqot guruhi',
+                    'team' => 'Kriminologiya tadqiqot instituti tadqiqot jamoasi',
                     'period' => '2024–2025 yillar (Yakunlangan)',
                     'goal' => 'Namangan viloyatida jinoyatchilikning holati, tendensiyalari va sabablarini kompleks kriminologik tahlil qilish hamda uning oldini olishga qaratilgan samarali ilmiy-amaliy taklif va mexanizmlarni ishlab chiqish.',
                     'results' => [
@@ -75,7 +75,7 @@ class LoyihaController extends Controller
                     'badge_icon' => '✓',
                     'color' => '#10B981',
                     'project_title' => 'Andijon viloyati jinoyatchiligini tadqiq qilish',
-                    'team' => 'Kriminologiya tadqiqot instituti tadqiqot guruhi',
+                    'team' => 'Kriminologiya tadqiqot instituti tadqiqot jamoasi',
                     'period' => '2024–2025 yillar (Yakunlangan)',
                     'goal' => 'Andijon viloyati hududida jinoyatchilikning holati, dinamikasi va tuzilmaviy xususiyatlarini kriminologiyaning eng ilg\'or yutuqlariga tayangan holda kompleks tahlil qilish, uni keltirib chiqarayotgan sabab va shart-sharoitlarni ilmiy asosda aniqlash hamda ularni bartaraf etishga qaratilgan samarali profilaktik mexanizmlarni ishlab chiqish.',
                     'results' => [
@@ -96,31 +96,29 @@ class LoyihaController extends Controller
                     'status_label' => 'Bajarilgan loyiha',
                     'badge_icon' => '✓',
                     'color' => '#10B981',
-                    'project_title' => 'Навоий вилояти жиноятчилигини тадқиқ қилиш',
-                    'team' => '6 нафар (3 нафар криминолог, 1 нафар социолог, 1 нафар таҳлилчи, 1 нафар амалиёт эксперти)',
+                    'project_title' => 'Navoiy viloyati jinoyatchiligini tadqiq qilish',
+                    'team' => '6 nafar (3 nafar kriminolog, 1 nafar sotsiolog, 1 nafar tahlilchi, 1 nafar amaliyot eksperti)',
                     'period' => '2024–2025 yillar (Yakunlangan)',
-                    'goal' => 'Навоий вилоятида жиноятчиликнинг ҳолати, тенденциялари ва сабабларини комплекс криминологик таҳлил қилиш ҳамда унинг олдини олишга қаратилган самарали илмий-амалий таклиф ва механизмларни ишлаб чиқиш.',
+                    'goal' => 'Navoiy viloyatida jinoyatchilikning holati, tendensiyalari va sabablarini kompleks kriminologik tahlil qilish hamda uning oldini olishga qaratilgan samarali ilmiy-amaliy taklif va mexanizmlarni ishlab chiqish.',
                     'annotation' => [
-                        'team_count' => '6 нафар (3 криминолог, 1 социолог, 1 таҳлилчи, 1 амалиёт эксперти)',
-                        'respondents' => '11 321 нафар (7 142 аёллар, 4 179 эркаклар)',
-                        'proposals' => '15 га яқин илмий асосланган таклиф ва тавсия',
-                        'presentation' => '25 июнь — Навоий вилояти ИИБ ва Миллий гвардия бошқармасида тақдимот',
-                        'certificates' => '“Ишонч ёрлиғи”, “Далолатнома”, “Илмий хулоса” олинган'
+                        'team_count' => '6 nafar (3 kriminolog, 1 sotsiolog, 1 tahlilchi, 1 amaliyot eksperti)',
+                        'respondents' => '11 321 nafar (7 142 ayollar, 4 179 erkaklar)',
+                        'proposals' => '15 ga yaqin ilmiy asoslangan taklif va tavsiya',
+                        'certificates' => '“Ishonch yorlig‘i”, “Dalolatnoma”, “Ilmiy xulosa” olingan'
                     ],
                     'results' => [
-                        'Вилоятнинг тарихи, демографик маълумотлари ва жиноятчиликка қарши курашиш борасида амалга оширилган ишлар комплекс ўрганилди;',
-                        'Салмоғи юқори бўлган жиноят турлари (ўғрилик, фирибгарлик, номусга тегиш, безорилик, талончилик, босқинчилик, оғир тан жароҳати етказиш, кибержиноят, гиёҳвандлик ва маҳалла жиноятчилиги) ва шахслар тоифаси (вояга етмаганлар, ёшлар, аёллар, илгари судланганлар, ишсизлар) кесимида тадқиқ қилинди;',
-                        'Якунланган жиноят ишлари (суд ҳукми ва терговга қадар текширув материаллари) таҳлили орқали жиноятчилик келиб чиқишининг сабаб ва омиллари аниқланди;',
-                        'Аҳоли мурожаатлари билан ишлаш амалиёти ўрганилиб, жами 11 321 нафар респондент (7 142 аёл ва 4 179 эркак) иштирокида кенг қамровли социологик тадқиқот ўтказилди;',
-                        'Жиноятчиликни барвақт олдини олиш, виктимологик профилактикани кучайтириш ҳамда ваколатли органлар фаолиятини такомиллаштиришга қаратилган 15 га яқин илмий асосланган таклиф ва тавсиялар ишлаб чиқилди;',
-                        'Лойиҳа якунида илмий диагноз қўйилиб, келгуси давр учун жиноятчилик тенденциялари прогноз қилинди.'
+                        'Viloyatning tarixi, demografik ma’lumotlari va jinoyatchilikka qarshi kurashish borasida amalga oshirilgan ishlar kompleks o‘rganildi;',
+                        'Salmog‘i yuqori bo‘lgan jinoyat turlari (o‘g‘rilik, firibgarlik, nomusga tegish, bezorilik, talonchilik, bosqinchilik, og‘ir tan jarohati yetkazish, kiberjinoyat, giyohvandlik va mahalla jinoyatchiligi) va shaxslar toifasi (voyaga yetmaganlar, yoshlar, ayollar, ilgari sudlanganlar, ishsizlar) kesimida tadqiq qilindi;',
+                        'Yakunlangan jinoyat ishlari (sud hukmi va tergovga qadar tekshiruv materiallari) tahlili orqali jinoyatchilik kelib chiqishining sabab va omillari aniqlandi;',
+                        'Aholi murojaatlari bilan ishlash amaliyoti o‘rganilib, jami 11 321 nafar respondent (7 142 ayol va 4 179 erkak) ishtirokida keng qamrovli sotsiologik tadqiqot o‘tkazildi;',
+                        'Jinoyatchilikni barvaqt oldini olish, viktimologik profilaktikani kuchaytirish hamda vakolatli organlar faoliyatini takomillashtirishga qaratilgan 15 ga yaqin ilmiy asoslangan taklif va tavsiyalar ishlab chiqildi;',
+                        'Loyiha yakunida ilmiy diagnoz qo‘yilib, kelgusi davr uchun jinoyatchilik tendensiyalari prognoz qilindi.'
                     ],
                     'implementation' => [
-                        '25 июнь куни Навоий вилояти ИИБ ҳамда Миллий гвардия бошқармасида раҳбарият ва ҳуқуқни муҳофаза қилувчи органлар вакиллари иштирокида расмий тақдимот ўтказилди;',
-                        'Тадқиқот натижалари Навоий вилояти ҳокимлиги, вилоят прокуратураси, ИИБ, Миллий гвардия ҳамда барча туман-шаҳар ИИБларига амалиётда фойдаланиш учун тақдим этилди;',
-                        'Навоий вилояти ҳокимлиги ва вилоят ИИБдан тадқиқот натижалари амалиётга жорий этилганлиги юзасидан расмий “Ишонч ёрлиғи”, “Далолатнома” ва “Илмий хулоса” олинди.'
+                        'Tadqiqot natijalari Navoiy viloyati hokimligi, viloyat prokuraturasi, IIB, Milliy gvardiya hamda barcha tuman-shahar IIBlarga amaliyotda foydalanish uchun taqdim etildi;',
+                        'Navoiy viloyati hokimligi va viloyat IIBdan tadqiqot natijalari amaliyotga joriy etilganligi yuzasidan rasmiy “Ishonch yorlig‘i”, “Dalolatnoma” va “Ilmiy xulosa” olindi.'
                     ],
-                    'outcomes' => 'Навоий вилояти ҳокимлиги ва вилоят ИИБ томонидан “Ишонч ёрлиғи”, “Далолатнома” ва “Илмий хулоса” асосида 11 та шаҳар ва туман профилактика тизимига тўлиқ татбиқ этилди.'
+                    'outcomes' => 'Navoiy viloyati hokimligi va viloyat IIB tomonidan “Ishonch yorlig‘i”, “Dalolatnoma” va “Ilmiy xulosa” asosida 11 ta shahar va tuman profilaktika tizimiga to‘liq tatbiq etildi.'
                 ],
 
                 // 4. Jizzax viloyati (Bajarilgan)
@@ -134,7 +132,7 @@ class LoyihaController extends Controller
                     'badge_icon' => '✓',
                     'color' => '#10B981',
                     'project_title' => 'Jizzax viloyati jinoyatchiligini tadqiq qilish',
-                    'team' => 'Kriminologiya tadqiqot instituti tadqiqot guruhi',
+                    'team' => 'Kriminologiya tadqiqot instituti tadqiqot jamoasi',
                     'period' => '2024–2025 yillar (Yakunlangan)',
                     'goal' => 'Jizzax viloyatida jinoyatchilikning holati, tendensiyalari va sabablarini kompleks kriminologik tahlil qilish hamda uning oldini olishga qaratilgan samarali ilmiy-amaliy taklif va mexanizmlarni ishlab chiqish.',
                     'results' => [
@@ -156,7 +154,7 @@ class LoyihaController extends Controller
                     'badge_icon' => '✓',
                     'color' => '#10B981',
                     'project_title' => 'Buxoro viloyati jinoyatchiligini tadqiq qilish',
-                    'team' => 'Kriminologiya tadqiqot instituti tadqiqot guruhi',
+                    'team' => 'Kriminologiya tadqiqot instituti tadqiqot jamoasi',
                     'period' => '2024–2025 yillar (Yakunlangan)',
                     'goal' => 'Buxoro viloyatida jinoyatchilikning umumiy holati, tuzilishi, dinamikasi va hududiy xususiyatlarini, shuningdek, viloyatdagi firibgarlik jinoyatining zamonaviy ko\'rinishlari, sodir etilish mexanizmlari va uni keltirib chiqaruvchi omillarni kompleks kriminologik tahlil qilish hamda jinoyatchilikni, ayniqsa, firibgarlik jinoyatlarini barvaqt oldini olishga qaratilgan samarali ilmiy-amaliy taklif va mexanizmlarni ishlab chiqishdan iborat.',
                     'results' => [
@@ -178,7 +176,7 @@ class LoyihaController extends Controller
                     'badge_icon' => '✓',
                     'color' => '#10B981',
                     'project_title' => 'Qoraqalpog\'iston jinoyatchiligini tadqiq qilish',
-                    'team' => 'Kriminologiya tadqiqot instituti tadqiqot guruhi',
+                    'team' => 'Kriminologiya tadqiqot instituti tadqiqot jamoasi',
                     'period' => '2024–2025 yillar (Yakunlangan)',
                     'goal' => 'Qoraqalpog\'iston Respublikasida jinoyatchilikning holati, mintaqaviy xususiyatlari, sabab va shart-sharoitlarini kompleks kriminologik tahlil qilish hamda Orolbo\'yi mintaqasida huquqbuzarliklar profilaktikasining samaradorligini oshirish bo\'yicha ilmiy-amaliy tavsiyalar ishlab chiqish.',
                     'results' => [
@@ -222,7 +220,7 @@ class LoyihaController extends Controller
                     'badge_icon' => '🔍',
                     'color' => '#2C3E6B',
                     'project_title' => 'Farg\'ona viloyati jinoyatchiligini tadqiq qilish',
-                    'team' => 'Kriminologiya tadqiqot instituti ilmiy tadqiqot guruhi',
+                    'team' => 'Kriminologiya tadqiqot instituti tadqiqot jamoasi',
                     'period' => '2025–2026 yillar (Amalga oshirilmoqda)',
                     'goal' => 'Farg\'ona viloyatida jinoyatchilikning umumiy holati, kriminogen omillari va hududiy dinamikasini ilmiy tadqiq qilish hamda barvaqt profilaktika mexanizmlarini yaratish.',
                     'results' => [
@@ -306,7 +304,7 @@ class LoyihaController extends Controller
                     'badge_icon' => '🔍',
                     'color' => '#2C3E6B',
                     'project_title' => 'Surxondaryo viloyati jinoyatchiligini tadqiq qilish',
-                    'team' => 'Institut Chegaraoldi kriminologiyasi guruhi',
+                    'team' => 'Institut Chegaraoldi kriminologiyasi tadqiqot jamoasi',
                     'period' => '2025–2026 yillar (Amalga oshirilmoqda)',
                     'goal' => 'Surxondaryo viloyatining chegaraoldi hududlari va tog\'li tumanlarida kriminogen xatarlarning barvaqt oldini olish mexanizmlarini tadqiq qilish.',
                     'results' => [
@@ -348,7 +346,7 @@ class LoyihaController extends Controller
                     'badge_icon' => '🔍',
                     'color' => '#2C3E6B',
                     'project_title' => 'Qashqadaryo viloyati jinoyatchiligini tadqiq qilish',
-                    'team' => 'Institut Hududiy ijtimoiy tahlil guruhi',
+                    'team' => 'Institut Hududiy ijtimoiy tahlil tadqiqot jamoasi',
                     'period' => '2025–2026 yillar (Amalga oshirilmoqda)',
                     'goal' => 'Qashqadaryo viloyatining neft-gaz sanoati klasterlari, yaylov va qishloq tumanlarida mulkiy jinoyatlarni barvaqt jilovlash uslubiyotini yaratish.',
                     'results' => [
@@ -379,7 +377,7 @@ class LoyihaController extends Controller
                 'date' => '2025-yil 12-noyabr',
                 'category' => 'Profilaktika xizmati',
                 'category_badge' => '#38BDF8',
-                'caption' => 'Institut tadqiqot guruhi tomonidan hududdagi kriminogen vaziyat, "qizil" toifadagi mahallalar va profilaktika inspektorlarining manzilli faoliyatini joyida kompleks tahlil qilish jarayoni.'
+                'caption' => 'Institut tadqiqot jamoasi tomonidan hududdagi kriminogen vaziyat, "qizil" toifadagi mahallalar va profilaktika inspektorlarining manzilli faoliyatini joyida kompleks tahlil qilish jarayoni.'
             ],
             [
                 'id' => 2,
@@ -423,13 +421,13 @@ class LoyihaController extends Controller
                 $item['pdf'] = [
                     'has_pdf' => true,
                     'title' => "Navoiy viloyati kriminologik tadqiqot hisoboti",
-                    'doc_number' => 'Навоий тадқиқот ҳисоботи',
+                    'doc_number' => 'Navoiy tadqiqot hisoboti',
                     'date' => '2025-yil',
                     'file_size' => '4.8 MB',
                     'pages' => 45,
                     'badge' => 'Loyiha hisoboti',
                     'institution' => 'O\'zbekiston Respublikasi Kriminologiya tadqiqot instituti',
-                    'summary' => "Навоий вилоятида жиноятчиликнинг ҳолати, тенденциялари ва сабабларини комплекс криминологик тадқиқ қилиш бўйича якуний илмий-амалий ҳисобот.",
+                    'summary' => "Navoiy viloyatida jinoyatchilikning holati, tendensiyalari va sabablarini kompleks kriminologik tadqiq qilish bo‘yicha yakuniy ilmiy-amaliy hisobot.",
                     'url' => route('loyiha.pdf.view', ['region' => 'navoi']),
                     'download_url' => route('loyiha.pdf.download', ['region' => 'navoi']),
                 ];
@@ -439,7 +437,7 @@ class LoyihaController extends Controller
                     'title' => $isComp 
                         ? "{$regName} bo'yicha tasdiqlangan ilmiy-amaliy loyiha hisoboti va buyrug'i"
                         : "{$regName} bo'yicha ilmiy tadqiqot rejasi va dastlabki oraliq xulosa",
-                    'doc_number' => '№ 1628-сон',
+                    'doc_number' => '№ 1628-son',
                     'date' => $isComp ? '07.11.2024 yil' : '2025/2026-yil',
                     'file_size' => '6.1 MB',
                     'pages' => 15,

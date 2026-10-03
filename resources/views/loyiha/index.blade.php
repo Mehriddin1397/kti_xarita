@@ -263,7 +263,7 @@
                 <div style="min-width:0;">
                     <h3 id="pdf-modal-title" class="pdf-modal-title">Ilmiy loyiha hisoboti</h3>
                     <div class="pdf-modal-sub" id="pdf-modal-sub">
-                        <span class="pdf-tag" id="pdf-tag-number">№ 1628-сон</span>
+                        <span class="pdf-tag" id="pdf-tag-number">№ 1628-son</span>
                         <span class="pdf-tag status-slide" id="pdf-slide-counter-badge">
                             <span style="color:#10B981; font-weight:800;">●</span> Slayd <span id="pdf-slide-curr">1</span> / <span id="pdf-slide-total">15</span>
                         </span>
@@ -445,8 +445,8 @@
                     <span>Kriminologiya tadqiqot instituti</span>
                 </div>
                 <div class="navoi-header-titles">
-                    <h3 class="navoi-modal-title" id="navoi-slide-modal-title">Навоий вилояти жиноятчилигини тадқиқ қилиш</h3>
-                    <div class="navoi-modal-subtitle" id="navoi-slide-modal-desc">Илмий-амалий тадқиқот ҳисоботи ва илмий таҳлилий тақдимоти</div>
+                    <h3 class="navoi-modal-title" id="navoi-slide-modal-title">Navoiy viloyati jinoyatchiligini tadqiq qilish</h3>
+                    <div class="navoi-modal-subtitle" id="navoi-slide-modal-desc">Ilmiy-amaliy tadqiqot hisoboti va ilmiy tahliliy taqdimoti</div>
                 </div>
             </div>
 
@@ -503,7 +503,7 @@
                     <img id="navoi-active-slide-img" src="/img/1.jpg" alt="Navoiy slayd 1" class="navoi-slide-img">
                     <div class="navoi-slide-caption-bar" id="navoi-slide-caption-bar">
                         <span class="navoi-caption-tag" id="navoi-caption-tag">1-Slayd</span>
-                        <div class="navoi-caption-text" id="navoi-caption-text">Республика бўйича жиноятлар турлари (2025 йилда қайд этилган жиноятлар — Навоий вилояти таҳлили)</div>
+                        <div class="navoi-caption-text" id="navoi-caption-text">Respublika bo‘yicha jinoyatlar turlari (2025 yilda qayd etilgan jinoyatlar — Navoiy viloyati tahlili)</div>
                     </div>
                 </div>
 
@@ -526,21 +526,21 @@
                             <img src="/img/1.jpg" alt="Slayd 1">
                             <span class="navoi-thumb-idx">1</span>
                         </div>
-                        <div class="navoi-thumb-title">Жиноятлар турлари</div>
+                        <div class="navoi-thumb-title">Jinoyatlar turlari</div>
                     </div>
                     <div class="navoi-thumb-item" data-index="1">
                         <div class="navoi-thumb-img-box">
                             <img src="/img/2.jpg" alt="Slayd 2">
                             <span class="navoi-thumb-idx">2</span>
                         </div>
-                        <div class="navoi-thumb-title">Жиноятчилик омиллари</div>
+                        <div class="navoi-thumb-title">Jinoyatchilik omillari</div>
                     </div>
                     <div class="navoi-thumb-item" data-index="2">
                         <div class="navoi-thumb-img-box">
                             <img src="/img/3.jpg" alt="Slayd 3">
                             <span class="navoi-thumb-idx">3</span>
                         </div>
-                        <div class="navoi-thumb-title">11 та илмий таклиф</div>
+                        <div class="navoi-thumb-title">11 ta ilmiy taklif</div>
                     </div>
                 </div>
             </div>
