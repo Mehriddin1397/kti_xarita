@@ -729,14 +729,14 @@
 
         // Og'ir
         html += '<div class="district-bar-item">';
-        html += `<div class="district-bar-label-row"><span>Og'ir jinoyatlar</span><strong style="color:#EF4444;">${formatNumber(serious)} ta</strong></div>`;
-        html += `<div class="district-bar-bg"><div class="district-bar-fill" style="width:${(serious / maxVal * 100).toFixed(1)}%;background:#EF4444;"></div></div>`;
+        html += `<div class="district-bar-label-row"><span>Og'ir jinoyatlar</span><strong style="color:#F59E0B;">${formatNumber(serious)} ta</strong></div>`;
+        html += `<div class="district-bar-bg"><div class="district-bar-fill" style="width:${(serious / maxVal * 100).toFixed(1)}%;background:#F59E0B;"></div></div>`;
         html += '</div>';
 
         // O'ta og'ir
         html += '<div class="district-bar-item">';
-        html += `<div class="district-bar-label-row"><span>O'ta og'ir jinoyatlar</span><strong style="color:#DC2626;">${formatNumber(vSerious)} ta</strong></div>`;
-        html += `<div class="district-bar-bg"><div class="district-bar-fill" style="width:${(vSerious / maxVal * 100).toFixed(1)}%;background:#DC2626;"></div></div>`;
+        html += `<div class="district-bar-label-row"><span>O'ta og'ir jinoyatlar</span><strong style="color:#EA580C;">${formatNumber(vSerious)} ta</strong></div>`;
+        html += `<div class="district-bar-bg"><div class="district-bar-fill" style="width:${(vSerious / maxVal * 100).toFixed(1)}%;background:#EA580C;"></div></div>`;
         html += '</div>';
 
         // Uncha og'ir bo'lmagan
@@ -1142,9 +1142,9 @@
 
         const jamiD = details.jami || {};
         const ogItems = [
-            { label: "Og'ir jinoyatlar", count: jamiD.crimes_serious || stats.crimes_serious || 0, pct: jamiD.crimes_serious_pct || 0, color: '#EF4444' },
-            { label: "Uncha og'ir bo'lmagan", count: jamiD.crimes_light || stats.crimes_light || 0, pct: jamiD.crimes_light_pct || 0, color: '#F59E0B' },
-            { label: "O'ta og'ir jinoyatlar", count: jamiD.crimes_very_serious || stats.crimes_very_serious || 0, pct: jamiD.crimes_very_serious_pct || 0, color: '#DC2626' },
+            { label: "Og'ir jinoyatlar", count: jamiD.crimes_serious || stats.crimes_serious || 0, pct: jamiD.crimes_serious_pct || 0, color: '#F59E0B' },
+            { label: "Uncha og'ir bo'lmagan", count: jamiD.crimes_light || stats.crimes_light || 0, pct: jamiD.crimes_light_pct || 0, color: '#38BDF8' },
+            { label: "O'ta og'ir jinoyatlar", count: jamiD.crimes_very_serious || stats.crimes_very_serious || 0, pct: jamiD.crimes_very_serious_pct || 0, color: '#EA580C' },
             { label: "Kiberjinoyat (AT)", count: jamiD.cybercrime || stats.cybercrime || 0, pct: 0, color: '#06B6D4' }
         ];
 

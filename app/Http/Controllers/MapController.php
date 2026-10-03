@@ -36,18 +36,18 @@ class MapController extends Controller
 
             // 1. Oldini olish mumkin bo'lgan 12 ta asosiy jinoyat turi
             'oldini_olish' => [
-                ['key' => 'theft', 'label' => "O'g'rilik", 'count' => 4745, 'rate' => 12.4, 'color' => '#DC2626'],
-                ['key' => 'fraud', 'label' => 'Firibgarlik', 'count' => 2023, 'rate' => 5.3, 'color' => '#F59E0B'],
+                ['key' => 'theft', 'label' => "O'g'rilik", 'count' => 4745, 'rate' => 12.4, 'color' => '#F59E0B'],
+                ['key' => 'fraud', 'label' => 'Firibgarlik', 'count' => 2023, 'rate' => 5.3, 'color' => '#38BDF8'],
                 ['key' => 'hooliganism', 'label' => 'Bezorilik', 'count' => 891, 'rate' => 2.3, 'color' => '#3B82F6'],
                 ['key' => 'light_harm', 'label' => 'Badanga yengil shikast', 'count' => 709, 'rate' => 1.9, 'color' => '#10B981'],
                 ['key' => 'moderate_harm', 'label' => "Badanga o'rtacha shikast", 'count' => 696, 'rate' => 1.8, 'color' => '#6366F1'],
                 ['key' => 'domestic_violence', 'label' => "Oilaviy zo'ravonlik", 'count' => 390, 'rate' => 1.0, 'color' => '#EC4899'],
-                ['key' => 'grievous_harm', 'label' => "Badanga og'ir shikast", 'count' => 359, 'rate' => 0.9, 'color' => '#EF4444'],
+                ['key' => 'grievous_harm', 'label' => "Badanga og'ir shikast", 'count' => 359, 'rate' => 0.9, 'color' => '#FB923C'],
                 ['key' => 'rape', 'label' => 'Nomusga tegish', 'count' => 279, 'rate' => 0.7, 'color' => '#A855F7'],
                 ['key' => 'robbery', 'label' => 'Talonchilik', 'count' => 194, 'rate' => 0.5, 'color' => '#F97316'],
-                ['key' => 'murder', 'label' => "Qasddan odam o'ldirish", 'count' => 163, 'rate' => 0.4, 'color' => '#B91C1C'],
+                ['key' => 'murder', 'label' => "Qasddan odam o'ldirish", 'count' => 163, 'rate' => 0.4, 'color' => '#EA580C'],
                 ['key' => 'carjacking', 'label' => 'Transport olib qochish', 'count' => 96, 'rate' => 0.3, 'color' => '#14B8A6'],
-                ['key' => 'brigandage', 'label' => 'Bosqinchilik', 'count' => 53, 'rate' => 0.1, 'color' => '#E11D48'],
+                ['key' => 'brigandage', 'label' => 'Bosqinchilik', 'count' => 53, 'rate' => 0.1, 'color' => '#D97706'],
             ],
 
             // 2. Aniqlanadigan 10 ta jinoyat turi
@@ -55,31 +55,31 @@ class MapController extends Controller
                 ['key' => 'drugs', 'label' => 'Giyohvandlik vositalari', 'count' => 8653, 'pct' => 43.8, 'color' => '#8B5CF6'],
                 ['key' => 'prostitution', 'label' => "Qo'shmachilik / fohishaxona", 'count' => 1747, 'pct' => 8.8, 'color' => '#EC4899'],
                 ['key' => 'bribery', 'label' => "Poraxo'rlik", 'count' => 962, 'pct' => 4.9, 'color' => '#F59E0B'],
-                ['key' => 'weapons', 'label' => "Noqonuniy qurol-yarog'", 'count' => 812, 'pct' => 4.1, 'color' => '#EF4444'],
-                ['key' => 'extremism', 'label' => "Ekstremizm bilan bog'liq", 'count' => 734, 'pct' => 3.7, 'color' => '#DC2626'],
+                ['key' => 'weapons', 'label' => "Noqonuniy qurol-yarog'", 'count' => 812, 'pct' => 4.1, 'color' => '#FB923C'],
+                ['key' => 'extremism', 'label' => "Ekstremizm bilan bog'liq", 'count' => 734, 'pct' => 3.7, 'color' => '#F97316'],
                 ['key' => 'admin_control', 'label' => "Ma'muriy nazoratni buzish", 'count' => 546, 'pct' => 2.8, 'color' => '#6366F1'],
-                ['key' => 'embezzlement', 'label' => "O'zlashtirish / rastrata", 'count' => 361, 'pct' => 1.8, 'color' => '#F97316'],
+                ['key' => 'embezzlement', 'label' => "O'zlashtirish / rastrata", 'count' => 361, 'pct' => 1.8, 'color' => '#F59E0B'],
                 ['key' => 'currency', 'label' => 'Noqonuniy valyuta muomalasi', 'count' => 302, 'pct' => 1.5, 'color' => '#06B6D4'],
                 ['key' => 'counterfeiting', 'label' => 'Qalbaki pul, aksiz markasi', 'count' => 223, 'pct' => 1.1, 'color' => '#14B8A6'],
-                ['key' => 'trafficking', 'label' => 'Odam savdosi', 'count' => 111, 'pct' => 0.6, 'color' => '#E11D48'],
+                ['key' => 'trafficking', 'label' => 'Odam savdosi', 'count' => 111, 'pct' => 0.6, 'color' => '#EA580C'],
             ],
 
             // 3. Alohida toifadagi shaxslar tomonidan sodir etilgan
             'shaxs' => [
                 ['key' => 'youth', 'label' => 'Yoshlar tomonidan', 'count' => 2887, 'pct' => 20.1, 'color' => '#3B82F6'],
-                ['key' => 'recidivists', 'label' => 'Muqaddam sudlanganlar', 'count' => 1207, 'pct' => 8.4, 'color' => '#DC2626'],
+                ['key' => 'recidivists', 'label' => 'Muqaddam sudlanganlar', 'count' => 1207, 'pct' => 8.4, 'color' => '#F59E0B'],
                 ['key' => 'groups', 'label' => 'Guruhlar tomonidan', 'count' => 1105, 'pct' => 7.7, 'color' => '#8B5CF6'],
                 ['key' => 'juveniles', 'label' => 'Voyaga yetmaganlar', 'count' => 767, 'pct' => 5.3, 'color' => '#06B6D4'],
                 ['key' => 'women', 'label' => 'Ayollar tomonidan', 'count' => 717, 'pct' => 5.0, 'color' => '#EC4899'],
                 ['key' => 'unemployed', 'label' => "Ishlamaydigan, o'qimaydiganlar", 'count' => 666, 'pct' => 4.6, 'color' => '#F59E0B'],
-                ['key' => 'drunken', 'label' => 'Mast holatda', 'count' => 464, 'pct' => 3.2, 'color' => '#EF4444'],
+                ['key' => 'drunken', 'label' => 'Mast holatda', 'count' => 464, 'pct' => 3.2, 'color' => '#FB923C'],
             ],
 
             // 4. Og'irlik darajalari
             'ogirlik' => [
-                ['label' => "Og'ir jinoyatlar", 'count' => 45997, 'pct' => 60.9, 'color' => '#EF4444'],
-                ['label' => "Uncha og'ir bo'lmagan", 'count' => 11088, 'pct' => 14.7, 'color' => '#F59E0B'],
-                ['label' => "O'ta og'ir jinoyatlar", 'count' => 3496, 'pct' => 4.6, 'color' => '#B91C1C'],
+                ['label' => "Og'ir jinoyatlar", 'count' => 45997, 'pct' => 60.9, 'color' => '#F59E0B'],
+                ['label' => "Uncha og'ir bo'lmagan", 'count' => 11088, 'pct' => 14.7, 'color' => '#38BDF8'],
+                ['label' => "O'ta og'ir jinoyatlar", 'count' => 3496, 'pct' => 4.6, 'color' => '#EA580C'],
             ],
         ];
 

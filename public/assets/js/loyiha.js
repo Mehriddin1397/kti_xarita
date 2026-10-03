@@ -746,7 +746,7 @@
         if (districtMapCountBadge) {
             const badgeIcon = isComp ? '✓' : '🔍';
             const badgeText = isComp ? 'Bajarilgan' : 'Jarayonda';
-            districtMapCountBadge.innerHTML = `<span style="margin-right:4px;">${badgeIcon}</span> ${badgeText} (${svgInfo.districts.length} ta tuman)`;
+            districtMapCountBadge.innerHTML = `<span style="margin-right:4px;">${badgeIcon}</span> ${badgeText} (${svgInfo.districts.length} ta tuman va shahar)`;
             districtMapCountBadge.style.color = isComp ? '#34D399' : '#38BDF8';
             districtMapCountBadge.style.borderColor = isComp ? 'rgba(16,185,129,0.4)' : 'rgba(56,189,248,0.4)';
             districtMapCountBadge.style.background = isComp ? 'rgba(16,185,129,0.15)' : 'rgba(56,189,248,0.15)';
