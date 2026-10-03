@@ -344,7 +344,7 @@
             mapContainer.appendChild(tooltip);
         }
         if (extraText) {
-            tooltip.innerHTML = `<div style="font-weight:700;margin-bottom:3px;color:#fff;">${name}</div><div style="font-size:11px;color:#CBD5E1;line-height:1.4;">${extraText}</div>`;
+            tooltip.innerHTML = `<div class="tooltip-name" style="font-weight:700;margin-bottom:3px;color:var(--text-white);">${name}</div><div class="tooltip-desc" style="font-size:11px;color:var(--text-muted);line-height:1.4;">${extraText}</div>`;
         } else {
             tooltip.textContent = name;
         }
@@ -697,7 +697,7 @@
         html += `<h2 class="district-focus-title">${dStats.district_name}</h2>`;
         html += `<span class="district-focus-region">${regName} tarkibidagi tuman • 2026-yil</span>`;
         html += '</div>';
-        html += `<button type="button" class="btn btn-secondary" id="btn-back-to-region-summary" style="padding:6px 12px;font-size:11.5px;border-radius:6px;background:rgba(255,255,255,0.08);color:#F1F5F9;border:1px solid rgba(255,255,255,0.15);cursor:pointer;">← Viloyat</button>`;
+        html += `<button type="button" class="btn btn-secondary" id="btn-back-to-region-summary" style="padding:6px 12px;font-size:11.5px;border-radius:6px;background:var(--bg-card-hover);color:var(--text-light);border:1px solid var(--border-light);cursor:pointer;">← Viloyat</button>`;
         html += '</div>';
 
         // 4 Key Stat Cards
@@ -708,7 +708,7 @@
         html += '</div>';
 
         html += '<div class="district-stat-box">';
-        html += `<div class="district-stat-val" style="color:#F1F5F9;">${rate}</div>`;
+        html += `<div class="district-stat-val" style="color:var(--text-white);">${rate}</div>`;
         html += '<div class="district-stat-lbl">100 ming aholiga</div>';
         html += '</div>';
 

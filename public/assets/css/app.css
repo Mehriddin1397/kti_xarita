@@ -3908,6 +3908,181 @@ html, body {
     color: #38BDF8;
 }
 
+/* ---------- Loyiha Components Base ---------- */
+.loyiha-filter-tabs {
+    display: flex;
+    gap: 8px;
+    margin: 16px 0 10px 0;
+}
+
+.loyiha-tab-btn {
+    flex: 1;
+    padding: 8px 6px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.loyiha-tab-btn.active[data-filter="all"] {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--text-white);
+    border-color: var(--border-light);
+}
+
+.loyiha-tab-btn[data-filter="completed"] {
+    border-color: rgba(16, 185, 129, 0.3);
+    color: #34D399;
+}
+
+.loyiha-tab-btn[data-filter="completed"].active {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: #10B981;
+    color: #34D399;
+}
+
+.loyiha-tab-btn[data-filter="in_progress"] {
+    border-color: rgba(56, 189, 248, 0.3);
+    color: #38BDF8;
+}
+
+.loyiha-tab-btn[data-filter="in_progress"].active {
+    background: rgba(56, 189, 248, 0.2);
+    border-color: #38BDF8;
+    color: #7DD3FC;
+}
+
+.badge-loyiha-count {
+    background: rgba(16, 185, 129, 0.18);
+    color: #34D399;
+    border-color: rgba(16, 185, 129, 0.35);
+}
+
+.loyiha-badge-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.badge-icon-completed {
+    background: #059669;
+    color: #ffffff;
+    border: 1px solid #34D399;
+}
+
+.badge-icon-in_progress {
+    background: #1E293B;
+    color: #93C5FD;
+    border: 1px solid #38BDF8;
+}
+
+.badge-status-completed {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34D399;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.badge-status-in_progress {
+    background: rgba(56, 189, 248, 0.15);
+    color: #7DD3FC;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.loyiha-notice-card {
+    margin-top: 14px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.5;
+}
+
+.loyiha-notice-card strong {
+    color: var(--text-light);
+}
+
+.loyiha-legend {
+    padding: 12px 16px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.loyiha-legend .legend-title {
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: var(--text-white);
+}
+
+.loyiha-legend .legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.loyiha-legend .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.loyiha-legend .legend-status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.loyiha-legend .legend-status-badge.badge-completed {
+    background: #059669;
+    color: #ffffff;
+    border: 1.5px solid #ffffff;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+.loyiha-legend .legend-status-badge.badge-progress {
+    background: #1E293B;
+    color: #38BDF8;
+    border: 1.5px solid #93C5FD;
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+}
+
+.loyiha-legend .legend-item-title.title-completed {
+    font-weight: 600;
+    color: #34D399;
+    font-size: 13px;
+}
+
+.loyiha-legend .legend-item-title.title-progress {
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+.loyiha-legend .legend-item-desc {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
 /* ============================================
    KUNDUZGI REJIM (LIGHT THEME MODE)
    ============================================ */
@@ -3922,7 +4097,7 @@ html, body {
     --text-light: #1E293B;
     --text-muted: #475569;
     --text-dim: #64748B;
-    --region-fill: #CBD5E1;
+    --region-fill: #475569;
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.07);
     --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.09);
     --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
@@ -4178,65 +4353,71 @@ html, body {
 }
 
 [data-theme="light"] #uzbekistan-map [data-region] {
-    fill: #CBD5E1;
+    fill: #475569;
     stroke: #FFFFFF;
-    stroke-width: 1.4px;
+    stroke-width: 1.5px;
 }
 
 [data-theme="light"] #uzbekistan-map [data-region].region-hover {
-    fill: #3B82F6 !important;
-    stroke: #1D4ED8 !important;
+    fill: #2563EB !important;
+    stroke: #FFFFFF !important;
 }
 
 [data-theme="light"] #uzbekistan-map [data-region].region-active {
-    fill: #1E40AF !important;
-    stroke: #172554 !important;
+    fill: #1D4ED8 !important;
+    stroke: #FFFFFF !important;
 }
 
 [data-theme="light"] #uzbekistan-loyiha-map path.region-path {
     stroke: #FFFFFF;
-    stroke-width: 1.4px;
+    stroke-width: 1.5px;
 }
 
 [data-theme="light"] #uzbekistan-loyiha-map path.region-path[data-status="completed"] {
-    fill: #10B981;
+    fill: #059669;
 }
 
 [data-theme="light"] #uzbekistan-loyiha-map path.region-path[data-status="in_progress"] {
-    fill: #94A3B8;
+    fill: #475569;
 }
 
 [data-theme="light"] #uzbekistan-loyiha-map path.region-path:hover {
-    fill: #3B82F6 !important;
-    stroke: #1D4ED8 !important;
+    fill: #2563EB !important;
+    stroke: #FFFFFF !important;
 }
 
 [data-theme="light"] #uzbekistan-loyiha-map path.region-path.region-active {
-    fill: #1E40AF !important;
-    stroke: #172554 !important;
+    fill: #1D4ED8 !important;
+    stroke: #FFFFFF !important;
 }
 
 [data-theme="light"] .district-path {
-    fill: #E2E8F0;
-    stroke: #64748B;
+    fill: #475569;
+    stroke: #FFFFFF;
     stroke-width: 1.2px;
 }
 
 [data-theme="light"] .district-path:hover {
-    fill: #93C5FD !important;
-    stroke: #2563EB !important;
+    fill: #2563EB !important;
+    stroke: #FFFFFF !important;
 }
 
 [data-theme="light"] .district-path.district-active {
-    fill: #3B82F6 !important;
-    stroke: #1D4ED8 !important;
+    fill: #1D4ED8 !important;
+    stroke: #FFFFFF !important;
 }
 
 [data-theme="light"] .region-name-label,
-[data-theme="light"] .region-stat-label,
 [data-theme="light"] .district-svg-label {
-    fill: #0F172A !important;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 6px #FFFFFF !important;
+    fill: #FFFFFF !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 5px rgba(0, 0, 0, 0.85) !important;
+    font-weight: 700;
+}
+
+[data-theme="light"] .region-stat-label {
+    fill: #FDE047 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 5px rgba(0, 0, 0, 0.85) !important;
+    font-weight: 700;
 }
 
 /* Banners & Controls in Light Mode */
@@ -4250,17 +4431,88 @@ html, body {
     color: #0F172A;
 }
 
-[data-theme="light"] .pipeline-flow {
-    background: #F1F5F9;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+[data-theme="light"] .kriminologik-pipeline-flow {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+    animation: none !important;
+}
+
+[data-theme="light"] .kriminologik-pipeline-flow::before {
+    display: none !important;
 }
 
 [data-theme="light"] .pipeline-step {
-    color: #475569;
+    text-shadow: none !important;
 }
 
-[data-theme="light"] .pipeline-step.active {
-    color: #2563EB;
+[data-theme="light"] .step-muammo {
+    color: #DC2626 !important;
+    background: #FEE2E2 !important;
+    border-color: #FCA5A5 !important;
+}
+[data-theme="light"] .step-muammo .step-dot {
+    background: #EF4444 !important;
+    box-shadow: 0 0 6px rgba(239, 68, 68, 0.5) !important;
+}
+
+[data-theme="light"] .step-tadqiqot {
+    color: #0284C7 !important;
+    background: #E0F2FE !important;
+    border-color: #BAE6FD !important;
+}
+[data-theme="light"] .step-tadqiqot .step-dot {
+    background: #0284C7 !important;
+    box-shadow: 0 0 6px rgba(2, 132, 199, 0.5) !important;
+}
+
+[data-theme="light"] .step-tahlil {
+    color: #4F46E5 !important;
+    background: #EEF2FF !important;
+    border-color: #C7D2FE !important;
+}
+[data-theme="light"] .step-tahlil .step-dot {
+    background: #6366F1 !important;
+    box-shadow: 0 0 6px rgba(99, 102, 241, 0.5) !important;
+}
+
+[data-theme="light"] .step-diagnoz {
+    color: #9333EA !important;
+    background: #F3E8FF !important;
+    border-color: #E9D5FF !important;
+}
+[data-theme="light"] .step-diagnoz .step-dot {
+    background: #A855F7 !important;
+    box-shadow: 0 0 6px rgba(168, 85, 247, 0.5) !important;
+}
+
+[data-theme="light"] .step-yechim {
+    color: #0D9488 !important;
+    background: #CCFBF1 !important;
+    border-color: #99F6E4 !important;
+}
+[data-theme="light"] .step-yechim .step-dot {
+    background: #14B8A6 !important;
+    box-shadow: 0 0 6px rgba(20, 184, 166, 0.5) !important;
+}
+
+[data-theme="light"] .step-natija {
+    color: #059669 !important;
+    background: #D1FAE5 !important;
+    border-color: #6EE7B7 !important;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.25) !important;
+}
+[data-theme="light"] .step-natija .step-dot.dot-result {
+    background: #10B981 !important;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6) !important;
+}
+
+[data-theme="light"] .pipeline-arrow {
+    color: #0284C7 !important;
+}
+
+[data-theme="light"] .pipeline-arrow svg {
+    filter: none !important;
 }
 
 [data-theme="light"] .map-btn,
@@ -4376,6 +4628,157 @@ html, body {
     border-color: #2563EB;
     color: #1D4ED8;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Loyiha Filter Tabs & Badges in Light Mode */
+[data-theme="light"] .loyiha-tab-btn {
+    background: #F1F5F9;
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #475569;
+}
+
+[data-theme="light"] .loyiha-tab-btn.active[data-filter="all"] {
+    background: #0F172A;
+    color: #FFFFFF;
+    border-color: #0F172A;
+}
+
+[data-theme="light"] .loyiha-tab-btn[data-filter="completed"] {
+    color: #059669;
+    border-color: rgba(5, 150, 105, 0.3);
+}
+
+[data-theme="light"] .loyiha-tab-btn[data-filter="completed"].active {
+    background: #D1FAE5;
+    border-color: #059669;
+    color: #047857;
+}
+
+[data-theme="light"] .loyiha-tab-btn[data-filter="in_progress"] {
+    color: #0284C7;
+    border-color: rgba(2, 132, 199, 0.3);
+}
+
+[data-theme="light"] .loyiha-tab-btn[data-filter="in_progress"].active {
+    background: #E0F2FE;
+    border-color: #0284C7;
+    color: #0369A1;
+}
+
+[data-theme="light"] .badge-loyiha-count {
+    background: #D1FAE5;
+    color: #047857;
+    border-color: #A7F3D0;
+}
+
+[data-theme="light"] .badge-icon-in_progress {
+    background: #F1F5F9;
+    color: #0284C7;
+    border: 1.5px solid #0284C7;
+}
+
+[data-theme="light"] .badge-status-completed {
+    background: #D1FAE5;
+    color: #047857;
+    border: 1px solid #A7F3D0;
+}
+
+[data-theme="light"] .badge-status-in_progress {
+    background: #E0F2FE;
+    color: #0369A1;
+    border: 1px solid #BAE6FD;
+}
+
+[data-theme="light"] .loyiha-notice-card {
+    background: #F8FAFC;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: #64748B;
+}
+
+[data-theme="light"] .loyiha-notice-card strong {
+    color: #1E293B;
+}
+
+[data-theme="light"] .loyiha-legend {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .loyiha-legend .legend-status-badge.badge-progress {
+    background: #F1F5F9;
+    color: #0284C7;
+    border: 1.5px solid #0284C7;
+    box-shadow: none;
+}
+
+[data-theme="light"] .loyiha-legend .legend-item-title.title-completed {
+    color: #047857;
+}
+
+[data-theme="light"] .loyiha-legend .legend-item-title.title-progress {
+    color: #1E293B;
+}
+
+[data-theme="light"] .loyiha-legend .legend-item-desc {
+    color: #64748B;
+}
+
+[data-theme="light"] .crumb-current {
+    color: #0F172A !important;
+}
+
+[data-theme="light"] .crumb-btn {
+    color: #2563EB !important;
+}
+
+[data-theme="light"] .district-stat-box {
+    background: #F8FAFC;
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .district-stat-lbl {
+    color: #64748B;
+}
+
+[data-theme="light"] .district-bar-label-row span {
+    color: #334155;
+}
+
+[data-theme="light"] .panel-empty-state {
+    color: #64748B;
+}
+
+[data-theme="light"] .panel-empty-state svg {
+    stroke: #94A3B8;
+}
+
+[data-theme="light"] .location-photo-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .location-card-title {
+    color: #0F172A;
+}
+
+[data-theme="light"] .location-card-meta {
+    color: #64748B;
+}
+
+[data-theme="light"] .loyiha-pdf-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .loyiha-pdf-title {
+    color: #0F172A;
+}
+
+[data-theme="light"] .loyiha-pdf-desc {
+    color: #64748B;
 }
 
 

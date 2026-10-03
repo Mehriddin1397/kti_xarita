@@ -52,14 +52,14 @@
             </div>
 
             {{-- Filter tabs --}}
-            <div class="loyiha-filter-tabs" style="display:flex; gap:8px; margin: 16px 0 10px 0;">
-                <button type="button" class="loyiha-tab-btn active" data-filter="all" style="flex:1; padding:8px 6px; font-size:12px; font-weight:600; border-radius:8px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.08); color:#fff; cursor:pointer;">
+            <div class="loyiha-filter-tabs">
+                <button type="button" class="loyiha-tab-btn active" data-filter="all">
                     Barchasi (14)
                 </button>
-                <button type="button" class="loyiha-tab-btn" data-filter="completed" style="flex:1; padding:8px 6px; font-size:12px; font-weight:600; border-radius:8px; border:1px solid rgba(16,185,129,0.3); background:transparent; color:#34D399; cursor:pointer;">
+                <button type="button" class="loyiha-tab-btn" data-filter="completed">
                     ✓ Bajarilgan (7)
                 </button>
-                <button type="button" class="loyiha-tab-btn" data-filter="in_progress" style="flex:1; padding:8px 6px; font-size:12px; font-weight:600; border-radius:8px; border:1px solid rgba(56,189,248,0.3); background:transparent; color:#38BDF8; cursor:pointer;">
+                <button type="button" class="loyiha-tab-btn" data-filter="in_progress">
                     🔍 Jarayonda (7)
                 </button>
             </div>
@@ -67,20 +67,20 @@
             {{-- Quick list of regions --}}
             <div class="summary-section-title" style="margin-top: 12px;">
                 <span>Hududiy loyihalar ro'yxati</span>
-                <span class="badge" style="background: rgba(16,185,129,0.18); color: #34D399; border-color: rgba(16,185,129,0.35);">14 hudud</span>
+                <span class="badge badge-loyiha-count">14 hudud</span>
             </div>
 
             <div class="regions-ranking-list loyiha-regions-list" id="loyiha-regions-list" style="max-height: 380px; overflow-y: auto;">
                 @foreach($regionsLoyiha as $slug => $item)
                 <div class="region-rank-item loyiha-item-row" data-region="{{ $slug }}" data-status="{{ $item['status'] }}" style="cursor: pointer;">
-                    <span class="loyiha-badge-icon" style="width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: bold; flex-shrink: 0; background: {{ $item['status'] === 'completed' ? '#059669' : '#1E293B' }}; color: {{ $item['status'] === 'completed' ? '#ffffff' : '#93C5FD' }}; border: 1px solid {{ $item['status'] === 'completed' ? '#34D399' : '#38BDF8' }};">
+                    <span class="loyiha-badge-icon badge-icon-{{ $item['status'] }}">
                         {{ $item['badge_icon'] }}
                     </span>
                     <div style="flex: 1; min-width: 0;">
                         <div class="rank-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600;">{{ $item['name'] }}</div>
                         <div style="font-size: 11px; color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ $item['project_title'] }}</div>
                     </div>
-                    <span class="badge" style="font-size: 11px; padding: 3px 7px; border-radius: 6px; background: {{ $item['status'] === 'completed' ? 'rgba(16,185,129,0.2)' : 'rgba(56,189,248,0.15)' }}; color: {{ $item['status'] === 'completed' ? '#34D399' : '#7DD3FC' }}; border-color: {{ $item['status'] === 'completed' ? 'rgba(16,185,129,0.4)' : 'rgba(56,189,248,0.3)' }};">
+                    <span class="badge badge-status-{{ $item['status'] }}" style="font-size: 11px; padding: 3px 7px; border-radius: 6px;">
                         {{ $item['status'] === 'completed' ? 'Bajarilgan' : 'Jarayonda' }}
                     </span>
                 </div>
@@ -88,8 +88,8 @@
             </div>
 
             {{-- Muassasa eslatmasi --}}
-            <div style="margin-top: 14px; padding: 10px 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; font-size: 11px; color: var(--text-dim); line-height: 1.5;">
-                <strong style="color: var(--text-light);">Eslatma:</strong> O'zbekiston Respublikasi Kriminologiya tadqiqot instituti tomonidan tasdiqlangan ilmiy-amaliy loyihalar rejasi asosida shakllantirilgan.
+            <div class="loyiha-notice-card">
+                <strong>Eslatma:</strong> O'zbekiston Respublikasi Kriminologiya tadqiqot instituti tomonidan tasdiqlangan ilmiy-amaliy loyihalar rejasi asosida shakllantirilgan.
             </div>
 
         </div>
@@ -117,27 +117,23 @@
             </div>
 
             {{-- Loyihalar afsonasi (Legend) --}}
-            <div class="map-legend loyiha-legend" style="padding: 12px 16px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 10px; backdrop-filter: blur(10px);">
-                <div class="legend-title" style="font-weight: 700; font-size: 13px; margin-bottom: 8px; color: #FFFFFF;">
+            <div class="map-legend loyiha-legend">
+                <div class="legend-title">
                     Ilmiy loyihalar holati
                 </div>
-                <div class="legend-items" style="display: flex; flex-direction: column; gap: 8px;">
-                    <div class="legend-item" style="display: flex; align-items: center; gap: 10px;">
-                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: #059669; color: #ffffff; font-weight: bold; font-size: 12px; border: 1.5px solid #ffffff; box-shadow: 0 0 8px rgba(16,185,129,0.5);">
-                            ✓
-                        </span>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="legend-status-badge badge-completed">✓</span>
                         <div>
-                            <span style="font-weight: 600; color: #34D399; font-size: 13px;">Bajarilgan loyihalar (7 ta)</span>
-                            <div style="font-size: 11px; color: #94A3B8;">Xaritada yashil hudud va ✓ belgisi</div>
+                            <span class="legend-item-title title-completed">Bajarilgan loyihalar (7 ta)</span>
+                            <div class="legend-item-desc">Xaritada yashil hudud va ✓ belgisi</div>
                         </div>
                     </div>
-                    <div class="legend-item" style="display: flex; align-items: center; gap: 10px;">
-                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: #1E293B; color: #38BDF8; font-weight: bold; font-size: 12px; border: 1.5px solid #93C5FD; box-shadow: 0 0 8px rgba(56,189,248,0.4);">
-                            🔍
-                        </span>
+                    <div class="legend-item">
+                        <span class="legend-status-badge badge-progress">🔍</span>
                         <div>
-                            <span style="font-weight: 600; color: #E2E8F0; font-size: 13px;">Bajarilayotgan loyihalar (7 ta)</span>
-                            <div style="font-size: 11px; color: #94A3B8;">Xarita rangi o'zgarmaydi va 🔍 belgisi</div>
+                            <span class="legend-item-title title-progress">Bajarilayotgan loyihalar (7 ta)</span>
+                            <div class="legend-item-desc">Xarita rangi o'zgarmaydi va 🔍 belgisi</div>
                         </div>
                     </div>
                 </div>

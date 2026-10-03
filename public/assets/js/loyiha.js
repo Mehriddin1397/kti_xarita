@@ -281,9 +281,9 @@
 
         tooltipName.textContent = data.name;
         if (data.status === 'completed') {
-            tooltipStat.innerHTML = `<span style="color:#34D399;font-weight:700;">✓ Bajarilgan loyiha</span><br><span style="font-size:11px;color:#CBD5E1;">${data.project_title}</span>`;
+            tooltipStat.innerHTML = `<span style="color:#10B981;font-weight:700;">✓ Bajarilgan loyiha</span><br><span style="font-size:11px;color:var(--text-muted);">${data.project_title}</span>`;
         } else {
-            tooltipStat.innerHTML = `<span style="color:#38BDF8;font-weight:700;">🔍 Bajarilayotgan loyiha</span><br><span style="font-size:11px;color:#CBD5E1;">${data.project_title}</span>`;
+            tooltipStat.innerHTML = `<span style="color:#0284C7;font-weight:700;">🔍 Bajarilayotgan loyiha</span><br><span style="font-size:11px;color:var(--text-muted);">${data.project_title}</span>`;
         }
 
         tooltip.style.display = 'block';
@@ -441,7 +441,7 @@
         let resultsHtml = '';
         if (Array.isArray(data.results)) {
             resultsHtml = data.results.map(r => `
-                <li style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 13px; line-height: 1.5; color: #E2E8F0;">
+                <li style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 13px; line-height: 1.5; color: var(--text-light);">
                     <span style="color: ${badgeColor}; font-weight: bold; flex-shrink: 0; margin-top: 1px;">${isComp ? '✓' : '•'}</span>
                     <span>${r}</span>
                 </li>
@@ -496,7 +496,7 @@
                             ${data.visited_locations.length} ta manzil
                         </span>
                     </div>
-                    <div style="font-size: 11px; color: #94A3B8; margin-bottom: 8px;">
+                    <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 8px;">
                         Institut ilmiy guruhi borgan obyektlar, IIB va mahallalardan fotosuratlar:
                     </div>
                     <div class="loyiha-gallery-grid">
@@ -519,7 +519,7 @@
                                     <div class="location-card-title" title="${loc.title}">${loc.title}</div>
                                     <div class="location-card-meta">
                                         <span>${loc.date}</span>
-                                        <span style="color:#38BDF8; font-weight:600;">Ochish 🔍</span>
+                                        <span style="color:#0284C7; font-weight:600;">Ochish 🔍</span>
                                     </div>
                                 </div>
                             </div>
@@ -533,35 +533,35 @@
         let annotationHtml = '';
         if (data.annotation) {
             annotationHtml = `
-                <div style="background: linear-gradient(135deg, rgba(16,185,129,0.08) 0%, rgba(15,23,42,0.9) 100%); border: 1px solid rgba(16,185,129,0.3); border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.25);">
+                <div class="annotation-box" style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; box-shadow: var(--shadow-sm);">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-                        <div style="font-size: 12px; font-weight: 700; color: #34D399; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                        <div style="font-size: 12px; font-weight: 700; color: #10B981; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
                             <span>📊</span> Расмий аннотация кўрсаткичлари
                         </div>
-                        <span style="font-size: 10.5px; background: rgba(16,185,129,0.2); color: #6EE7B7; padding: 2px 8px; border-radius: 20px; border: 1px solid rgba(16,185,129,0.3); font-weight: 600;">
+                        <span style="font-size: 10.5px; background: rgba(16,185,129,0.15); color: #059669; padding: 2px 8px; border-radius: 20px; border: 1px solid rgba(16,185,129,0.3); font-weight: 600;">
                             Ҳисобот фактологияси
                         </span>
                     </div>
                     <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 10px 12px;">
-                            <div style="font-size: 11px; color: #94A3B8; margin-bottom: 3px;">👥 Тадқиқот жамоаси</div>
-                            <div style="font-size: 12px; font-weight: 700; color: #F8FAFC; line-height: 1.35;">${data.annotation.team_count || data.team}</div>
+                        <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 12px;">
+                            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 3px;">👥 Тадқиқот жамоаси</div>
+                            <div style="font-size: 12px; font-weight: 700; color: var(--text-white); line-height: 1.35;">${data.annotation.team_count || data.team}</div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 10px 12px;">
-                            <div style="font-size: 11px; color: #94A3B8; margin-bottom: 3px;">📋 Социологик сўров</div>
-                            <div style="font-size: 12px; font-weight: 700; color: #F8FAFC; line-height: 1.35;">${data.annotation.respondents}</div>
+                        <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 12px;">
+                            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 3px;">📋 Социологик сўров</div>
+                            <div style="font-size: 12px; font-weight: 700; color: var(--text-white); line-height: 1.35;">${data.annotation.respondents}</div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 10px 12px;">
-                            <div style="font-size: 11px; color: #94A3B8; margin-bottom: 3px;">💡 Илмий таклиф ва прогноз</div>
-                            <div style="font-size: 12px; font-weight: 700; color: #F8FAFC; line-height: 1.35;">${data.annotation.proposals}</div>
+                        <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 12px;">
+                            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 3px;">💡 Илмий таклиф ва прогноз</div>
+                            <div style="font-size: 12px; font-weight: 700; color: var(--text-white); line-height: 1.35;">${data.annotation.proposals}</div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 10px 12px;">
-                            <div style="font-size: 11px; color: #94A3B8; margin-bottom: 3px;">🏆 Расмий тасдиқ ва амалиёт</div>
-                            <div style="font-size: 12px; font-weight: 700; color: #34D399; line-height: 1.35;">${data.annotation.certificates}</div>
+                        <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 12px;">
+                            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 3px;">🏆 Расмий тасдиқ ва амалиёт</div>
+                            <div style="font-size: 12px; font-weight: 700; color: #10B981; line-height: 1.35;">${data.annotation.certificates}</div>
                         </div>
                     </div>
                     ${data.annotation.presentation ? `
-                        <div style="margin-top: 10px; padding: 8px 12px; background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.25); border-radius: 6px; font-size: 11.5px; color: #BAE6FD; display: flex; align-items: center; gap: 6px;">
+                        <div style="margin-top: 10px; padding: 8px 12px; background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.25); border-radius: 6px; font-size: 11.5px; color: var(--text-light); display: flex; align-items: center; gap: 6px;">
                             <span>📢</span> <span>${data.annotation.presentation}</span>
                         </div>
                     ` : ''}
@@ -576,13 +576,13 @@
                 <div style="margin-bottom: 16px;">
                     <div class="summary-section-title" style="margin-bottom: 8px;">
                         <span>🏛️ Амалиётга жорий этиш ва расмий тақдимот</span>
-                        <span class="badge" style="background: rgba(16,185,129,0.15); color: #34D399; border-color: rgba(16,185,129,0.35);">
+                        <span class="badge" style="background: rgba(16,185,129,0.15); color: #10B981; border-color: rgba(16,185,129,0.35);">
                             ${data.implementation.length} та босқич
                         </span>
                     </div>
                     <ul style="list-style: none; padding: 0; margin: 0;">
                         ${data.implementation.map(item => `
-                            <li style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 13px; line-height: 1.5; color: #E2E8F0;">
+                            <li style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 13px; line-height: 1.5; color: var(--text-light);">
                                 <span style="color: #10B981; font-weight: bold; flex-shrink: 0; margin-top: 1px;">✓</span>
                                 <span>${item}</span>
                             </li>
@@ -602,9 +602,9 @@
                         </span>
                         ${data.status_label}
                     </span>
-                    <span style="font-size: 11px; color: #94A3B8; background: rgba(0,0,0,0.25); padding: 2px 8px; border-radius: 4px;">${data.period}</span>
+                    <span style="font-size: 11px; color: var(--text-muted); background: var(--bg-card-hover); border: 1px solid var(--border-color); padding: 2px 8px; border-radius: 4px;">${data.period}</span>
                 </div>
-                <h3 style="font-size: 16px; font-weight: 700; color: #FFFFFF; line-height: 1.4; margin: 4px 0 0 0;">
+                <h3 style="font-size: 16px; font-weight: 700; color: var(--text-white); line-height: 1.4; margin: 4px 0 0 0;">
                     «${data.project_title}»
                 </h3>
             </div>
@@ -616,11 +616,11 @@
             ${annotationHtml}
 
             <!-- Research Team / Mas'ullar -->
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 12px 14px; margin-bottom: 16px;">
-                <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #94A3B8; margin-bottom: 4px; font-weight: 600;">
+            <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 10px; padding: 12px 14px; margin-bottom: 16px;">
+                <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 4px; font-weight: 600;">
                     Tadqiqotchi guruh / Mas'ul ijrochilar
                 </div>
-                <div style="font-size: 13px; font-weight: 600; color: #F1F5F9;">
+                <div style="font-size: 13px; font-weight: 600; color: var(--text-white);">
                     ${data.team}
                 </div>
             </div>
@@ -630,7 +630,7 @@
                 <div class="summary-section-title" style="margin-bottom: 8px;">
                     <span>Loyiha maqsadi</span>
                 </div>
-                <div style="background: rgba(15,23,42,0.6); border-left: 3px solid ${badgeColor}; padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: 13px; line-height: 1.55; color: #CBD5E1;">
+                <div style="background: var(--bg-card-hover); border-left: 3px solid ${badgeColor}; padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: 13px; line-height: 1.55; color: var(--text-light);">
                     ${data.goal}
                 </div>
             </div>
@@ -655,11 +655,11 @@
             ${locationsHtml}
 
             <!-- Amaliy samara -->
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 12px 14px; margin-bottom: 16px;">
-                <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #94A3B8; margin-bottom: 4px; font-weight: 600;">
+            <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 10px; padding: 12px 14px; margin-bottom: 16px;">
+                <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 4px; font-weight: 600;">
                     Amaliy samaradorlik va tadbiq
                 </div>
-                <div style="font-size: 13px; color: #E2E8F0; line-height: 1.5;">
+                <div style="font-size: 13px; color: var(--text-light); line-height: 1.5;">
                     ${data.outcomes}
                 </div>
             </div>
@@ -800,7 +800,7 @@
                 const color = isComp ? '#34D399' : '#38BDF8';
                 tooltipStat.innerHTML = `
                     <span style="color:${color};font-weight:700;">${statusTxt}</span><br>
-                    <span style="font-size:11px;color:#CBD5E1;">${regionLoyiha ? regionLoyiha.project_title : ''}</span>
+                    <span style="font-size:11px;color:var(--text-muted);">${regionLoyiha ? regionLoyiha.project_title : ''}</span>
                 `;
                 tooltip.style.display = 'block';
                 positionTooltip(e);
@@ -870,13 +870,13 @@
             {{-- Breadcrumbs & Back link --}}
             <div class="district-breadcrumbs" style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;">
                 <div style="display:flex; align-items:center; gap:6px; font-size:12px;">
-                    <button type="button" class="crumb-btn" id="crumb-to-region" style="background:none; border:none; color:#60A5FA; font-weight:600; cursor:pointer; padding:0; text-decoration:underline;">
+                    <button type="button" class="crumb-btn" id="crumb-to-region" style="background:none; border:none; color:#2563EB; font-weight:600; cursor:pointer; padding:0; text-decoration:underline;">
                         ${regionLoyiha.name}
                     </button>
                     <span class="crumb-sep" style="color:var(--text-dim);">/</span>
-                    <span class="crumb-current" style="color:#FFFFFF; font-weight:700;">${dName}</span>
+                    <span class="crumb-current" style="color:var(--text-white); font-weight:700;">${dName}</span>
                 </div>
-                <button type="button" class="btn btn-secondary" id="btn-back-to-region-summary" style="padding:4px 10px; font-size:11px; border-radius:6px; background:rgba(255,255,255,0.08); color:#F1F5F9; border:1px solid rgba(255,255,255,0.15); cursor:pointer;">
+                <button type="button" class="btn btn-secondary" id="btn-back-to-region-summary" style="padding:4px 10px; font-size:11px; border-radius:6px; background:var(--bg-card-hover); color:var(--text-light); border:1px solid var(--border-light); cursor:pointer;">
                     ← Viloyat
                 </button>
             </div>
@@ -890,39 +890,39 @@
                         </span>
                         ${regionLoyiha.status_label}
                     </span>
-                    <span style="font-size: 11px; color: #94A3B8; background: rgba(0,0,0,0.25); padding: 2px 8px; border-radius: 4px;">${regionLoyiha.period}</span>
+                    <span style="font-size: 11px; color: var(--text-muted); background: var(--bg-card-hover); border: 1px solid var(--border-color); padding: 2px 8px; border-radius: 4px;">${regionLoyiha.period}</span>
                 </div>
-                <h3 style="font-size: 15px; font-weight: 700; color: #FFFFFF; line-height: 1.4; margin: 4px 0 0 0;">
+                <h3 style="font-size: 15px; font-weight: 700; color: var(--text-white); line-height: 1.4; margin: 4px 0 0 0;">
                     «${regionLoyiha.project_title}»
                 </h3>
             </div>
 
             {{-- 4 Key District Stat Cards --}}
             <div class="district-stats-grid" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; margin-bottom:16px;">
-                <div class="district-stat-box" style="border-color:rgba(96,165,250,0.3); background:rgba(30,58,138,0.2); border-radius:8px; padding:10px 12px; text-align:center;">
-                    <div class="district-stat-val" style="color:#60A5FA; font-size:18px; font-weight:800;">${formatNumber(totalCrimes)}</div>
+                <div class="district-stat-box" style="border-color:rgba(96,165,250,0.3); background:rgba(30,58,138,0.15); border-radius:8px; padding:10px 12px; text-align:center;">
+                    <div class="district-stat-val" style="color:#2563EB; font-size:18px; font-weight:800;">${formatNumber(totalCrimes)}</div>
                     <div class="district-stat-lbl" style="font-size:10.5px; color:var(--text-muted); margin-top:4px;">Jami jinoyatlar (2026)</div>
                 </div>
-                <div class="district-stat-box" style="border-radius:8px; padding:10px 12px; text-align:center; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);">
-                    <div class="district-stat-val" style="color:#F1F5F9; font-size:18px; font-weight:800;">${crimeRate ? Number(crimeRate).toFixed(1) : '—'}</div>
+                <div class="district-stat-box" style="border-radius:8px; padding:10px 12px; text-align:center; background:var(--bg-card-hover); border:1px solid var(--border-color);">
+                    <div class="district-stat-val" style="color:var(--text-white); font-size:18px; font-weight:800;">${crimeRate ? Number(crimeRate).toFixed(1) : '—'}</div>
                     <div class="district-stat-lbl" style="font-size:10.5px; color:var(--text-muted); margin-top:4px;">100 ming aholiga</div>
                 </div>
-                <div class="district-stat-box" style="border-radius:8px; padding:10px 12px; text-align:center; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);">
+                <div class="district-stat-box" style="border-radius:8px; padding:10px 12px; text-align:center; background:var(--bg-card-hover); border:1px solid var(--border-color);">
                     <div class="district-stat-val" style="color:#10B981; font-size:18px; font-weight:800;">${solvedRate ? Number(solvedRate).toFixed(1) + '%' : '78.5%'}</div>
                     <div class="district-stat-lbl" style="font-size:10.5px; color:var(--text-muted); margin-top:4px;">Ochilganlik darajasi</div>
                 </div>
-                <div class="district-stat-box" style="border-radius:8px; padding:10px 12px; text-align:center; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);">
+                <div class="district-stat-box" style="border-radius:8px; padding:10px 12px; text-align:center; background:var(--bg-card-hover); border:1px solid var(--border-color);">
                     <div class="district-stat-val" style="color:#06B6D4; font-size:18px; font-weight:800;">${formatNumber(cyberCrimes || Math.round(totalCrimes * 0.45))}</div>
                     <div class="district-stat-lbl" style="font-size:10.5px; color:var(--text-muted); margin-top:4px;">Kiberjinoyat (AT)</div>
                 </div>
             </div>
 
             {{-- District Tadqiqot Mexanizmi --}}
-            <div style="background: rgba(15,23,42,0.6); border-left: 3px solid ${color}; padding: 12px 14px; border-radius: 0 8px 8px 0; margin-bottom: 16px;">
-                <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #94A3B8; margin-bottom: 4px; font-weight: 600;">
+            <div style="background: var(--bg-card-hover); border-left: 3px solid ${color}; padding: 12px 14px; border-radius: 0 8px 8px 0; margin-bottom: 16px;">
+                <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 4px; font-weight: 600;">
                     ${dName} kriminologik tavsifi
                 </div>
-                <div style="font-size: 13px; line-height: 1.55; color: #E2E8F0;">
+                <div style="font-size: 13px; line-height: 1.55; color: var(--text-light);">
                     Mazkur tumanda kriminogen omillar kompleks tahlil qilinib, «${regionLoyiha.project_title}» ilmiy loyihasi doirasida xavflarni barvaqt aniqlash va bartaraf etishning manzilli choralari tatbiq etilmoqda.
                 </div>
             </div>
@@ -933,15 +933,15 @@
                     <span>${isComp ? 'Tumanda amaliyotga joriy etilgan metodikalar' : 'Tumanda kutilayotgan profilaktik choralar'}</span>
                 </div>
                 <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li style="display:flex; align-items:flex-start; gap:8px; margin-bottom:8px; font-size:12.5px; line-height:1.5; color:#E2E8F0;">
+                    <li style="display:flex; align-items:flex-start; gap:8px; margin-bottom:8px; font-size:12.5px; line-height:1.5; color:var(--text-light);">
                         <span style="color:${color}; font-weight:bold; flex-shrink:0;">✓</span>
                         <span>Mahallalar kesimida kriminogen vaziyatni barqarorlashtirish va "qizil" toifalarni pasaytirish;</span>
                     </li>
-                    <li style="display:flex; align-items:flex-start; gap:8px; margin-bottom:8px; font-size:12.5px; line-height:1.5; color:#E2E8F0;">
+                    <li style="display:flex; align-items:flex-start; gap:8px; margin-bottom:8px; font-size:12.5px; line-height:1.5; color:var(--text-light);">
                         <span style="color:${color}; font-weight:bold; flex-shrink:0;">✓</span>
                         <span>Axborot texnologiyalari orqali sodir etilayotgan kiberfiribgarliklar profilaktikasi;</span>
                     </li>
-                    <li style="display:flex; align-items:flex-start; gap:8px; margin-bottom:8px; font-size:12.5px; line-height:1.5; color:#E2E8F0;">
+                    <li style="display:flex; align-items:flex-start; gap:8px; margin-bottom:8px; font-size:12.5px; line-height:1.5; color:var(--text-light);">
                         <span style="color:${color}; font-weight:bold; flex-shrink:0;">✓</span>
                         <span>Yoshlar va oila-turmush doirasidagi zo'ravonliklarning barvaqt oldini olish.</span>
                     </li>
@@ -957,9 +957,9 @@
                     ${regDistricts.map(d => {
                         const isActive = cleanDistrictName(d.district_name || d.name) === cleanDistrictName(dName);
                         return `
-                            <div class="district-row ${isActive ? 'active-dist' : ''}" data-dist-name="${d.district_name || d.name}" style="cursor:pointer; display:flex; align-items:center; justify-content:space-between; padding:7px 10px; border-radius:6px; margin-bottom:4px; font-size:12px; ${isActive ? 'background:rgba(96,165,250,0.18); border:1px solid rgba(96,165,250,0.4);' : 'background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06);'}">
-                                <span class="district-name" style="${isActive ? 'color:#93C5FD; font-weight:700;' : 'color:#E2E8F0;'}">${d.district_name || d.name}</span>
-                                <span class="district-value" style="color:${isActive ? '#60A5FA' : '#94A3B8'}; font-weight:600;">${formatNumber(d.total_crimes)} ta</span>
+                            <div class="district-row ${isActive ? 'active-dist' : ''}" data-dist-name="${d.district_name || d.name}" style="cursor:pointer; display:flex; align-items:center; justify-content:space-between; padding:7px 10px; border-radius:6px; margin-bottom:4px; font-size:12px; ${isActive ? 'background:rgba(96,165,250,0.18); border:1px solid rgba(96,165,250,0.4);' : 'background:var(--bg-card-hover); border:1px solid var(--border-color);'}">
+                                <span class="district-name" style="${isActive ? 'color:#2563EB; font-weight:700;' : 'color:var(--text-light);'}">${d.district_name || d.name}</span>
+                                <span class="district-value" style="color:${isActive ? '#2563EB' : 'var(--text-muted)'}; font-weight:600;">${formatNumber(d.total_crimes)} ta</span>
                             </div>
                         `;
                     }).join('')}
@@ -968,7 +968,7 @@
 
             {{-- Action buttons --}}
             <div style="display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap;">
-                <button type="button" class="btn btn-secondary" id="btn-back-to-overview" style="flex:1; padding:9px 12px; border-radius:8px; font-size:12px; font-weight:600; background:rgba(255,255,255,0.08); color:#F1F5F9; border:1px solid rgba(255,255,255,0.15); cursor:pointer;">
+                <button type="button" class="btn btn-secondary" id="btn-back-to-overview" style="flex:1; padding:9px 12px; border-radius:8px; font-size:12px; font-weight:600; background:var(--bg-card-hover); color:var(--text-light); border:1px solid var(--border-light); cursor:pointer;">
                     ← Viloyat
                 </button>
                 <button type="button" class="btn btn-secondary" id="btn-district-pdf" style="padding:9px 12px; border-radius:8px; font-size:12px; font-weight:600; background:rgba(16,185,129,0.15); color:#34D399; border:1px solid rgba(16,185,129,0.35); cursor:pointer; display:flex; align-items:center; gap:5px;">
@@ -1359,11 +1359,11 @@
         let resultsHtml = '';
         if (Array.isArray(data.results)) {
             resultsHtml = data.results.map((r, i) => `
-                <div style="display:flex; gap:12px; margin-bottom:12px; padding:10px 14px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:8px;">
+                <div style="display:flex; gap:12px; margin-bottom:12px; padding:10px 14px; background:var(--bg-card-hover); border:1px solid var(--border-color); border-radius:8px;">
                     <span style="display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:${isComp ? '#059669' : '#1E293B'}; color:#fff; font-size:12px; font-weight:bold; flex-shrink:0;">
                         ${i + 1}
                     </span>
-                    <span style="font-size:13.5px; line-height:1.55; color:#E2E8F0;">${r}</span>
+                    <span style="font-size:13.5px; line-height:1.55; color:var(--text-light);">${r}</span>
                 </div>
             `).join('');
         }
@@ -1372,35 +1372,35 @@
         let modalAnnotationHtml = '';
         if (data.annotation) {
             modalAnnotationHtml = `
-                <div style="background: linear-gradient(135deg, rgba(16,185,129,0.08) 0%, rgba(15,23,42,0.95) 100%); border: 1px solid rgba(16,185,129,0.35); border-radius: 12px; padding: 16px 18px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; border-bottom: 1px solid rgba(16,185,129,0.2); padding-bottom: 10px;">
-                        <div style="font-size: 13px; font-weight: 700; color: #34D399; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px;">
+                <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 12px; padding: 16px 18px; margin-bottom: 20px; box-shadow: var(--shadow-sm);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                        <div style="font-size: 13px; font-weight: 700; color: #10B981; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px;">
                             <span style="font-size: 16px;">📊</span> Расмий илмий-амалий ҳисобот аннотацияси кўрсаткичлари
                         </div>
-                        <span style="font-size: 11px; background: rgba(16,185,129,0.2); color: #6EE7B7; padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(16,185,129,0.35); font-weight: 600;">
+                        <span style="font-size: 11px; background: rgba(16,185,129,0.15); color: #059669; padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(16,185,129,0.3); font-weight: 600;">
                             Институт расмий маълумоти
                         </span>
                     </div>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
-                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 14px;">
-                            <div style="font-size: 11.5px; color: #94A3B8; margin-bottom: 4px;">👥 Илмий тадқиқот жамоаси</div>
-                            <div style="font-size: 13px; font-weight: 700; color: #F8FAFC; line-height: 1.4;">${data.annotation.team_count || data.team}</div>
+                        <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px 14px;">
+                            <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px;">👥 Илмий тадқиқот жамоаси</div>
+                            <div style="font-size: 13px; font-weight: 700; color: var(--text-white); line-height: 1.4;">${data.annotation.team_count || data.team}</div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 14px;">
-                            <div style="font-size: 11.5px; color: #94A3B8; margin-bottom: 4px;">📋 Социологик тадқиқот қамрови</div>
-                            <div style="font-size: 13px; font-weight: 700; color: #F8FAFC; line-height: 1.4;">${data.annotation.respondents}</div>
+                        <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px 14px;">
+                            <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px;">📋 Социологик тадқиқот қамрови</div>
+                            <div style="font-size: 13px; font-weight: 700; color: var(--text-white); line-height: 1.4;">${data.annotation.respondents}</div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 14px;">
-                            <div style="font-size: 11.5px; color: #94A3B8; margin-bottom: 4px;">💡 Илмий таклиф ва диагноз</div>
-                            <div style="font-size: 13px; font-weight: 700; color: #F8FAFC; line-height: 1.4;">${data.annotation.proposals}</div>
+                        <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px 14px;">
+                            <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px;">💡 Илмий таклиф ва диагноз</div>
+                            <div style="font-size: 13px; font-weight: 700; color: var(--text-white); line-height: 1.4;">${data.annotation.proposals}</div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 14px;">
-                            <div style="font-size: 11.5px; color: #94A3B8; margin-bottom: 4px;">🏆 Расмий амалиёт далолатномалари</div>
-                            <div style="font-size: 13px; font-weight: 700; color: #34D399; line-height: 1.4;">${data.annotation.certificates}</div>
+                        <div style="background: var(--bg-card-hover); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px 14px;">
+                            <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px;">🏆 Расмий амалиёт далолатномалари</div>
+                            <div style="font-size: 13px; font-weight: 700; color: #10B981; line-height: 1.4;">${data.annotation.certificates}</div>
                         </div>
                     </div>
                     ${data.annotation.presentation ? `
-                        <div style="margin-top: 12px; padding: 10px 14px; background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.25); border-radius: 8px; font-size: 12px; color: #BAE6FD; display: flex; align-items: center; gap: 8px;">
+                        <div style="margin-top: 12px; padding: 10px 14px; background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.25); border-radius: 8px; font-size: 12px; color: var(--text-light); display: flex; align-items: center; gap: 8px;">
                             <span style="font-size: 14px;">📢</span> <span>${data.annotation.presentation}</span>
                         </div>
                     ` : ''}
@@ -1413,16 +1413,16 @@
         if (Array.isArray(data.implementation) && data.implementation.length > 0) {
             modalImplementationHtml = `
                 <div style="margin-bottom: 20px;">
-                    <h4 style="font-size: 14px; font-weight: 700; color: #94A3B8; text-transform: uppercase; margin-bottom: 10px;">
+                    <h4 style="font-size: 14px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 10px;">
                         🏛️ Амалиётга жорий этиш ва расмий тақдимот (${data.implementation.length} та босқич)
                     </h4>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
                         ${data.implementation.map(item => `
-                            <div style="display: flex; gap: 12px; padding: 12px 14px; background: rgba(16,185,129,0.05); border: 1px solid rgba(16,185,129,0.2); border-radius: 8px;">
+                            <div style="display: flex; gap: 12px; padding: 12px 14px; background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.25); border-radius: 8px;">
                                 <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: #059669; color: #fff; font-size: 12px; font-weight: bold; flex-shrink: 0;">
                                     ✓
                                 </span>
-                                <span style="font-size: 13.5px; line-height: 1.55; color: #E2E8F0;">${item}</span>
+                                <span style="font-size: 13.5px; line-height: 1.55; color: var(--text-light);">${item}</span>
                             </div>
                         `).join('')}
                     </div>
@@ -1432,30 +1432,30 @@
 
         modalBody.innerHTML = `
             <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:12px; margin-bottom:18px;">
-                <div style="background:rgba(255,255,255,0.04); padding:10px 14px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
-                    <div style="font-size:11px; color:#94A3B8;">Ma'muriy markaz</div>
-                    <div style="font-size:14px; font-weight:600; color:#fff;">${data.capital}</div>
+                <div style="background:var(--bg-card-hover); padding:10px 14px; border-radius:8px; border:1px solid var(--border-color);">
+                    <div style="font-size:11px; color:var(--text-muted);">Ma'muriy markaz</div>
+                    <div style="font-size:14px; font-weight:600; color:var(--text-white);">${data.capital}</div>
                 </div>
-                <div style="background:rgba(255,255,255,0.04); padding:10px 14px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
-                    <div style="font-size:11px; color:#94A3B8;">Aholi soni</div>
-                    <div style="font-size:14px; font-weight:600; color:#fff;">${Number(data.population).toLocaleString('uz-UZ')} nafar</div>
+                <div style="background:var(--bg-card-hover); padding:10px 14px; border-radius:8px; border:1px solid var(--border-color);">
+                    <div style="font-size:11px; color:var(--text-muted);">Aholi soni</div>
+                    <div style="font-size:14px; font-weight:600; color:var(--text-white);">${Number(data.population).toLocaleString('uz-UZ')} nafar</div>
                 </div>
-                <div style="background:rgba(255,255,255,0.04); padding:10px 14px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
-                    <div style="font-size:11px; color:#94A3B8;">Tadqiqot davri</div>
-                    <div style="font-size:14px; font-weight:600; color:#fff;">${data.period}</div>
+                <div style="background:var(--bg-card-hover); padding:10px 14px; border-radius:8px; border:1px solid var(--border-color);">
+                    <div style="font-size:11px; color:var(--text-muted);">Tadqiqot davri</div>
+                    <div style="font-size:14px; font-weight:600; color:var(--text-white);">${data.period}</div>
                 </div>
             </div>
 
             <!-- PDF Hisobot Banner in Passport -->
             ${data.pdf && data.pdf.has_pdf ? `
-                <div style="background:linear-gradient(135deg, rgba(16,185,129,0.14) 0%, rgba(15,23,42,0.85) 100%); border:1px solid rgba(16,185,129,0.4); border-radius:10px; padding:14px 16px; margin-bottom:18px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; box-shadow:0 4px 16px rgba(0,0,0,0.3);">
+                <div style="background:var(--bg-card); border:1px solid var(--border-light); border-radius:10px; padding:14px 16px; margin-bottom:18px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; box-shadow:var(--shadow-sm);">
                     <div style="display:flex; align-items:center; gap:12px; min-width:0; flex:1;">
                         <span style="display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:8px; background:linear-gradient(135deg, #059669 0%, #10B981 100%); color:#fff; font-weight:800; font-size:12px; box-shadow:0 0 12px rgba(16,185,129,0.4); flex-shrink:0;">
                             PDF
                         </span>
                         <div style="min-width:0;">
-                            <div style="font-size:14px; font-weight:700; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${data.pdf.title}</div>
-                            <div style="font-size:11.5px; color:#94A3B8;">${data.pdf.doc_number} • ${data.pdf.date} • ${data.pdf.file_size} • ${data.pdf.pages} sahifa</div>
+                            <div style="font-size:14px; font-weight:700; color:var(--text-white); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${data.pdf.title}</div>
+                            <div style="font-size:11.5px; color:var(--text-muted);">${data.pdf.doc_number} • ${data.pdf.date} • ${data.pdf.file_size} • ${data.pdf.pages} sahifa</div>
                         </div>
                     </div>
                     <div style="display:flex; gap:8px;">
@@ -1466,7 +1466,7 @@
                             </svg>
                             Kreativ ko'rish
                         </button>
-                        <a href="${data.pdf.download_url || '/loyiha/hujjat/pdf/download'}" style="display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:8px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#E2E8F0; text-decoration:none;" title="Yuklab olish">
+                        <a href="${data.pdf.download_url || '/loyiha/hujjat/pdf/download'}" style="display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:8px; background:var(--bg-card-hover); border:1px solid var(--border-color); color:var(--text-light); text-decoration:none;" title="Yuklab olish">
                             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7 10 12 15 17 10"></polyline>
@@ -1481,14 +1481,14 @@
             ${modalAnnotationHtml}
 
             <div style="margin-bottom:18px;">
-                <h4 style="font-size:14px; font-weight:700; color:#94A3B8; text-transform:uppercase; margin-bottom:8px;">Loyiha maqsadi</h4>
-                <div style="padding:14px 16px; background:rgba(15,23,42,0.8); border-left:4px solid ${color}; border-radius:0 8px 8px 0; font-size:14px; line-height:1.6; color:#F1F5F9;">
+                <h4 style="font-size:14px; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px;">Loyiha maqsadi</h4>
+                <div style="padding:14px 16px; background:var(--bg-card-hover); border-left:4px solid ${color}; border-radius:0 8px 8px 0; font-size:14px; line-height:1.6; color:var(--text-light);">
                     ${data.goal}
                 </div>
             </div>
 
             <div style="margin-bottom:18px;">
-                <h4 style="font-size:14px; font-weight:700; color:#94A3B8; text-transform:uppercase; margin-bottom:8px;">
+                <h4 style="font-size:14px; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px;">
                     ${isComp ? 'Erishilgan asosiy ilmiy-amaliy natijalar' : 'Tadqiqotning kutilayotgan ilmiy-amaliy natijalari'}
                 </h4>
                 ${resultsHtml}
@@ -1500,21 +1500,21 @@
             <!-- Dala tadqiqotlari fotosuratlari in Passport -->
             ${Array.isArray(data.visited_locations) && data.visited_locations.length > 0 ? `
                 <div style="margin-bottom:18px;">
-                    <h4 style="font-size:14px; font-weight:700; color:#94A3B8; text-transform:uppercase; margin-bottom:10px;">
+                    <h4 style="font-size:14px; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-bottom:10px;">
                         📸 Dala tadqiqotlari va borilgan manzillar fotohisoboti (${data.visited_locations.length} ta manzil)
                     </h4>
                     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:10px;">
                         ${data.visited_locations.map((loc, idx) => `
-                            <div class="passport-loc-card" data-idx="${idx}" style="cursor:pointer; background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); border-radius:8px; overflow:hidden; transition:all 0.2s ease;">
+                            <div class="passport-loc-card" data-idx="${idx}" style="cursor:pointer; background:var(--bg-card-hover); border:1px solid var(--border-color); border-radius:8px; overflow:hidden; transition:all 0.2s ease;">
                                 <div style="height:115px; overflow:hidden; position:relative;">
                                     <img src="${loc.image}" alt="${loc.title}" style="width:100%; height:100%; object-fit:cover;">
                                     <span style="position:absolute; top:6px; left:6px; font-size:10px; font-weight:700; background:rgba(15,23,42,0.85); color:#38BDF8; padding:2px 6px; border-radius:4px; border:1px solid rgba(56,189,248,0.3);">${loc.category}</span>
                                 </div>
                                 <div style="padding:8px 10px;">
-                                    <div style="font-size:12px; font-weight:600; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${loc.title}</div>
-                                    <div style="font-size:11px; color:#94A3B8; margin-top:3px; display:flex; justify-content:space-between;">
+                                    <div style="font-size:12px; font-weight:600; color:var(--text-white); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${loc.title}</div>
+                                    <div style="font-size:11px; color:var(--text-muted); margin-top:3px; display:flex; justify-content:space-between;">
                                         <span>${loc.date}</span>
-                                        <span style="color:#38BDF8;">Ochish 🔍</span>
+                                        <span style="color:#0284C7; font-weight:600;">Ochish 🔍</span>
                                     </div>
                                 </div>
                             </div>
@@ -1524,8 +1524,8 @@
             ` : ''}
 
             <div>
-                <h4 style="font-size:14px; font-weight:700; color:#94A3B8; text-transform:uppercase; margin-bottom:8px;">Amaliy ahamiyati va joriy etish</h4>
-                <div style="padding:12px 16px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:8px; font-size:13.5px; line-height:1.55; color:#CBD5E1;">
+                <h4 style="font-size:14px; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px;">Amaliy ahamiyati va joriy etish</h4>
+                <div style="padding:12px 16px; background:var(--bg-card-hover); border:1px solid var(--border-color); border-radius:8px; font-size:13.5px; line-height:1.55; color:var(--text-light);">
                     ${data.outcomes}
                 </div>
             </div>
