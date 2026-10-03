@@ -8,7 +8,7 @@
     <link rel="icon" type="image/jpeg" href="/logo/photo_2025-09-03_15-19-21.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}?v={{ file_exists(public_path('assets/css/app.css')) ? filemtime(public_path('assets/css/app.css')) : '1.0' }}">
     <style>* { touch-action: manipulation; }</style>
     <script>
         try {

@@ -4452,13 +4452,18 @@ html, body {
 
 /* Banners & Controls in Light Mode */
 [data-theme="light"] .map-top-banner {
-    background: rgba(255, 255, 255, 0.94);
-    border: 1px solid rgba(0, 0, 0, 0.09);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
-[data-theme="light"] .map-main-title {
-    color: #0F172A;
+[data-theme="light"] .map-main-title,
+[data-theme="light"] .map-banner-title {
+    color: #FFFFFF !important;
+    background: linear-gradient(135deg, #064E3B 0%, #047857 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 4px 14px rgba(6, 78, 59, 0.35) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
 [data-theme="light"] .kriminologik-pipeline-flow {

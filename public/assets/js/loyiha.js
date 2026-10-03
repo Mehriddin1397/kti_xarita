@@ -471,7 +471,7 @@
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <polygon points="10 8 16 12 10 16 10 8"></polygon>
                             </svg>
-                            Kreativ PDF Ko'rish
+                            Loyiha hisoboti
                         </button>
                         <a href="${data.pdf.download_url || '/loyiha/hujjat/pdf/download'}" class="btn-pdf-download-icon" title="Yuklab olish">
                             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -976,7 +976,7 @@
                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                         <polyline points="14 2 14 8 20 8"></polyline>
                     </svg>
-                    PDF hisobot
+                    Loyiha hisoboti
                 </button>
                 <button type="button" class="btn btn-primary" id="open-full-passport-btn" style="flex:1; padding:9px 12px; border-radius:8px; font-size:12px; font-weight:600; background:linear-gradient(135deg, #059669 0%, #10B981 100%); color:#fff; border:none; cursor:pointer;">
                     To'liq pasport
@@ -1464,7 +1464,7 @@
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <polygon points="10 8 16 12 10 16 10 8"></polygon>
                             </svg>
-                            Kreativ ko'rish
+                            Loyiha hisoboti
                         </button>
                         <a href="${data.pdf.download_url || '/loyiha/hujjat/pdf/download'}" style="display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:8px; background:var(--bg-card-hover); border:1px solid var(--border-color); color:var(--text-light); text-decoration:none;" title="Yuklab olish">
                             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1539,7 +1539,7 @@
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                             <polyline points="14 2 14 8 20 8"></polyline>
                         </svg>
-                        Rasmiy PDF hisobotni ochish
+                        Loyiha hisoboti
                     </button>
                 `;
                 const footerPdfBtn = modalFooterPdfAction.querySelector('#modal-footer-pdf-btn');

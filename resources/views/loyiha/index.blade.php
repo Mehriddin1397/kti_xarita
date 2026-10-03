@@ -554,5 +554,5 @@
     window.REGIONS_DATA = @json($regionsData);
 </script>
 <script src="{{ asset('assets/js/pdf.min.js') }}"></script>
-<script src="{{ asset('assets/js/loyiha.js') }}"></script>
+<script src="{{ asset('assets/js/loyiha.js') }}?v={{ file_exists(public_path('assets/js/loyiha.js')) ? filemtime(public_path('assets/js/loyiha.js')) : '1.0' }}"></script>
 @endsection

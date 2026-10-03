@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Region;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class LoyihaController extends Controller
 {
@@ -418,21 +419,37 @@ class LoyihaController extends Controller
             $capital = $item['capital'];
 
             // PDF metadata
-            $item['pdf'] = [
-                'has_pdf' => true,
-                'title' => $isComp 
-                    ? "{$regName} bo'yicha tasdiqlangan ilmiy-amaliy loyiha hisoboti va buyrug'i"
-                    : "{$regName} bo'yicha ilmiy tadqiqot rejasi va dastlabki oraliq xulosa",
-                'doc_number' => '№ 1628-сон',
-                'date' => $isComp ? '07.11.2024 yil' : '2025/2026-yil',
-                'file_size' => '6.1 MB',
-                'pages' => 15,
-                'badge' => $isComp ? 'Tasdiqlangan hisobot' : 'Ilmiy dastur',
-                'institution' => 'O\'zbekiston Respublikasi Kriminologiya tadqiqot instituti',
-                'summary' => "O'zbekiston Respublikasi Kriminologiya tadqiqot instituti Ilmiy kengashi qarori bilan tasdiqlangan «{$item['project_title']}» loyihasining to'liq me'yoriy hujjati.",
-                'url' => route('loyiha.pdf.view'),
-                'download_url' => route('loyiha.pdf.download'),
-            ];
+            if ($slug === 'navoi') {
+                $item['pdf'] = [
+                    'has_pdf' => true,
+                    'title' => "Navoiy viloyati kriminologik tadqiqot hisoboti",
+                    'doc_number' => 'Навоий тадқиқот ҳисоботи',
+                    'date' => '2025-yil',
+                    'file_size' => '4.8 MB',
+                    'pages' => 45,
+                    'badge' => 'Loyiha hisoboti',
+                    'institution' => 'O\'zbekiston Respublikasi Kriminologiya tadqiqot instituti',
+                    'summary' => "Навоий вилоятида жиноятчиликнинг ҳолати, тенденциялари ва сабабларини комплекс криминологик тадқиқ қилиш бўйича якуний илмий-амалий ҳисобот.",
+                    'url' => route('loyiha.pdf.view', ['region' => 'navoi']),
+                    'download_url' => route('loyiha.pdf.download', ['region' => 'navoi']),
+                ];
+            } else {
+                $item['pdf'] = [
+                    'has_pdf' => true,
+                    'title' => $isComp 
+                        ? "{$regName} bo'yicha tasdiqlangan ilmiy-amaliy loyiha hisoboti va buyrug'i"
+                        : "{$regName} bo'yicha ilmiy tadqiqot rejasi va dastlabki oraliq xulosa",
+                    'doc_number' => '№ 1628-сон',
+                    'date' => $isComp ? '07.11.2024 yil' : '2025/2026-yil',
+                    'file_size' => '6.1 MB',
+                    'pages' => 15,
+                    'badge' => 'Loyiha hisoboti',
+                    'institution' => 'O\'zbekiston Respublikasi Kriminologiya tadqiqot instituti',
+                    'summary' => "O'zbekiston Respublikasi Kriminologiya tadqiqot instituti Ilmiy kengashi qarori bilan tasdiqlangan «{$item['project_title']}» loyihasining to'liq me'yoriy hujjati.",
+                    'url' => route('loyiha.pdf.view', ['region' => $slug]),
+                    'download_url' => route('loyiha.pdf.download', ['region' => $slug]),
+                ];
+            }
 
             // Tailored visited field locations
             $item['visited_locations'] = [
@@ -483,16 +500,24 @@ class LoyihaController extends Controller
     /**
      * Stream the sample PDF document inline
      */
-    public function viewPdf()
+    public function viewPdf(Request $request)
     {
-        $filePath = public_path('pdf/1_PDFsam_1628-сон буйруқ 07.11.2024 йил.pdf');
+        $region = $request->query('region');
+        if ($region === 'navoi') {
+            $filePath = public_path('pdf/Navoiy tadqiqot hisoboti.pdf');
+            $fileName = 'navoiy-tadqiqot-hisoboti.pdf';
+        } else {
+            $filePath = public_path('pdf/1_PDFsam_1628-сон буйруқ 07.11.2024 йил.pdf');
+            $fileName = 'kriminologiya-loyiha-buyruq-1628.pdf';
+        }
+
         if (!file_exists($filePath)) {
             abort(404, 'PDF fayl topilmadi');
         }
 
         return response()->file($filePath, [
             'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="kriminologiya-loyiha-buyruq-1628.pdf"',
+            'Content-Disposition' => 'inline; filename="' . $fileName . '"',
             'Cache-Control' => 'public, max-age=86400',
         ]);
     }
@@ -500,14 +525,22 @@ class LoyihaController extends Controller
     /**
      * Download the sample PDF document
      */
-    public function downloadPdf()
+    public function downloadPdf(Request $request)
     {
-        $filePath = public_path('pdf/1_PDFsam_1628-сон буйруқ 07.11.2024 йил.pdf');
+        $region = $request->query('region');
+        if ($region === 'navoi') {
+            $filePath = public_path('pdf/Navoiy tadqiqot hisoboti.pdf');
+            $downloadName = 'Navoiy_tadqiqot_hisoboti.pdf';
+        } else {
+            $filePath = public_path('pdf/1_PDFsam_1628-сон буйруқ 07.11.2024 йил.pdf');
+            $downloadName = '1628-sonli_buyruq_loyiha_hujjati.pdf';
+        }
+
         if (!file_exists($filePath)) {
             abort(404, 'PDF fayl topilmadi');
         }
 
-        return response()->download($filePath, '1628-sonli_buyruq_loyiha_hujjati.pdf', [
+        return response()->download($filePath, $downloadName, [
             'Content-Type' => 'application/pdf'
         ]);
     }
