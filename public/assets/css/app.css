@@ -4107,7 +4107,7 @@ html, body {
     --text-light: #1E293B;
     --text-muted: #475569;
     --text-dim: #64748B;
-    --region-fill: #475569;
+    --region-fill: #6EE7B7;
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.07);
     --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.09);
     --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
@@ -4349,40 +4349,39 @@ html, body {
     color: #1E293B;
 }
 
-/* Map Canvas in Light Mode */
+/* Map Canvas in Light Mode - Musaffo och yashil rejim */
 [data-theme="light"] #map-container,
-[data-theme="light"] .map-container {
-    background: radial-gradient(ellipse 80% 75% at 50% 48%, #E2E8F0 0%, #EDF2F7 52%, #F8FAFC 100%);
-    box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.04);
+[data-theme="light"] .map-container,
+[data-theme="light"] .loyiha-map-canvas {
+    background: radial-gradient(ellipse 80% 75% at 50% 48%, #F0FDF4 0%, #ECFDF5 50%, #F8FAFC 100%) !important;
+    box-shadow: inset 0 0 80px rgba(16, 185, 129, 0.05);
 }
 
 [data-theme="light"] .district-map-container {
-    background: radial-gradient(ellipse 80% 75% at 50% 48%, rgba(226, 232, 240, 0.98) 0%, rgba(237, 242, 247, 0.98) 55%, rgba(248, 250, 252, 0.99) 100%);
+    background: radial-gradient(ellipse 80% 75% at 50% 48%, rgba(240, 253, 244, 0.98) 0%, rgba(236, 253, 245, 0.98) 55%, rgba(248, 250, 252, 0.99) 100%) !important;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 }
 
+/* Asosiy Tahlil xaritasi - Musaffo och yashil */
 [data-theme="light"] #uzbekistan-map [data-region] {
-    fill: #475569;
+    fill: #6EE7B7;
     stroke: #FFFFFF;
-    stroke-width: 1.5px;
+    stroke-width: 1.6px;
+    filter: drop-shadow(0 2px 8px rgba(16, 185, 129, 0.15));
 }
 
 [data-theme="light"] #uzbekistan-map [data-region].region-hover {
-    fill: #2563EB !important;
-    stroke: #FFFFFF !important;
+    fill: #34D399 !important;
+    stroke: #047857 !important;
 }
 
 [data-theme="light"] #uzbekistan-map [data-region].region-active {
-    fill: #1D4ED8 !important;
+    fill: #059669 !important;
     stroke: #FFFFFF !important;
 }
 
 /* Tadqiqot xaritasi - Musaffo och yashil rejim */
-[data-theme="light"] .loyiha-map-canvas {
-    background: radial-gradient(ellipse 80% 75% at 50% 48%, #F0FDF4 0%, #ECFDF5 50%, #F8FAFC 100%) !important;
-}
-
 [data-theme="light"] #uzbekistan-loyiha-map path.region-path {
     stroke: #FFFFFF;
     stroke-width: 1.6px;
@@ -4420,62 +4419,35 @@ html, body {
     stroke-width: 2px !important;
 }
 
-/* Asosiy statistika xaritasi tumanlari */
+/* Tumanlar xaritasi (Tahlil va Tadqiqot bo'limlarida) - Musaffo och yashil */
 [data-theme="light"] .district-path {
-    fill: #475569;
-    stroke: #FFFFFF;
-    stroke-width: 1.2px;
-}
-
-[data-theme="light"] .district-path:hover {
-    fill: #2563EB !important;
-    stroke: #FFFFFF !important;
-}
-
-[data-theme="light"] .district-path.district-active {
-    fill: #1D4ED8 !important;
-    stroke: #FFFFFF !important;
-}
-
-/* Tadqiqot bo'limi tumanlar xaritasi - Musaffo och yashil */
-[data-theme="light"] .loyiha-map-canvas .district-map-container,
-[data-theme="light"] #map-container.loyiha-map-canvas .district-map-container {
-    background: radial-gradient(ellipse 80% 75% at 50% 48%, rgba(240, 253, 244, 0.98) 0%, rgba(236, 253, 245, 0.98) 55%, rgba(248, 250, 252, 0.99) 100%) !important;
-}
-
-[data-theme="light"] .loyiha-map-canvas .district-path {
     fill: #6EE7B7;
     stroke: #FFFFFF;
     stroke-width: 1.3px;
 }
 
-[data-theme="light"] .loyiha-map-canvas .district-path:hover {
+[data-theme="light"] .district-path:hover {
     fill: #34D399 !important;
     stroke: #047857 !important;
 }
 
-[data-theme="light"] .loyiha-map-canvas .district-path.district-active {
+[data-theme="light"] .district-path.district-active {
     fill: #059669 !important;
     stroke: #FFFFFF !important;
 }
 
-[data-theme="light"] .loyiha-map-canvas .district-svg-label {
-    fill: #064E3B !important;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 5px #FFFFFF !important;
-    font-weight: 700;
-}
-
+/* Xaritadagi hudud nomlari va ko'rsatkichlar - Ravshan to'q yashil yozuvlar */
 [data-theme="light"] .region-name-label,
 [data-theme="light"] .district-svg-label {
-    fill: #FFFFFF !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 5px rgba(0, 0, 0, 0.85) !important;
+    fill: #064E3B !important;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 6px #FFFFFF !important;
     font-weight: 700;
 }
 
 [data-theme="light"] .region-stat-label {
-    fill: #FDE047 !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 5px rgba(0, 0, 0, 0.85) !important;
-    font-weight: 700;
+    fill: #047857 !important;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 6px #FFFFFF !important;
+    font-weight: 800;
 }
 
 /* Banners & Controls in Light Mode */
