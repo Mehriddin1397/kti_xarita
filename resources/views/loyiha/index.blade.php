@@ -32,27 +32,8 @@
                 <span class="total-label" style="color: var(--text-light);">Hududiy ilmiy-amaliy loyihalar</span>
             </div>
 
-            <div class="country-stat-cards">
-                <div class="stat-card-dark" style="border-color: rgba(16,185,129,0.4); background: rgba(16,185,129,0.08);">
-                    <div class="stat-value" style="color: #10B981; display:flex; align-items:center; justify-content:center; gap:6px;">
-                        <span>✓</span> <span>{{ $overall['completed_count'] ?? 7 }} ta</span>
-                    </div>
-                    <div class="stat-label">Bajarilgan loyihalar</div>
-                </div>
-                <div class="stat-card-dark" style="border-color: rgba(56,189,248,0.4); background: rgba(56,189,248,0.08);">
-                    <div class="stat-value" style="color: #38BDF8; display:flex; align-items:center; justify-content:center; gap:6px;">
-                        <span>🔍</span> <span>{{ $overall['in_progress_count'] ?? 7 }} ta</span>
-                    </div>
-                    <div class="stat-label">Bajarilayotgan loyihalar</div>
-                </div>
-                <div class="stat-card-dark">
-                    <div class="stat-value" style="color: #F59E0B;">{{ $overall['completed_pct'] ?? 50 }}%</div>
-                    <div class="stat-label">Bajarilish salmog'i</div>
-                </div>
-            </div>
-
             {{-- Filter tabs --}}
-            <div class="loyiha-filter-tabs">
+            <div class="loyiha-filter-tabs" style="margin-top: 14px;">
                 <button type="button" class="loyiha-tab-btn active" data-filter="all">
                     Barchasi (14)
                 </button>
@@ -65,12 +46,12 @@
             </div>
 
             {{-- Quick list of regions --}}
-            <div class="summary-section-title" style="margin-top: 12px;">
+            <div class="summary-section-title" style="margin-top: 14px;">
                 <span>Hududiy loyihalar ro'yxati</span>
                 <span class="badge badge-loyiha-count">14 hudud</span>
             </div>
 
-            <div class="regions-ranking-list loyiha-regions-list" id="loyiha-regions-list" style="max-height: 380px; overflow-y: auto;">
+            <div class="regions-ranking-list loyiha-regions-list" id="loyiha-regions-list" style="flex: 1; min-height: 0; max-height: calc(100vh - 220px); overflow-y: auto;">
                 @foreach($regionsLoyiha as $slug => $item)
                 <div class="region-rank-item loyiha-item-row" data-region="{{ $slug }}" data-status="{{ $item['status'] }}" style="cursor: pointer;">
                     <span class="loyiha-badge-icon badge-icon-{{ $item['status'] }}">
@@ -85,11 +66,6 @@
                     </span>
                 </div>
                 @endforeach
-            </div>
-
-            {{-- Muassasa eslatmasi --}}
-            <div class="loyiha-notice-card">
-                <strong>Eslatma:</strong> O'zbekiston Respublikasi Kriminologiya tadqiqot instituti tomonidan tasdiqlangan ilmiy-amaliy loyihalar rejasi asosida shakllantirilgan.
             </div>
 
         </div>

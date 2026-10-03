@@ -2006,6 +2006,38 @@ html, body {
     filter: brightness(1.3) drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
 }
 
+/* Xaritadagi lupalar yonib-o'chib turishi (Blinking / pulsing animation) */
+.map-badge-inprogress {
+    animation: lupaBlinkPulse 1.5s ease-in-out infinite;
+}
+
+.map-badge-inprogress:nth-of-type(odd) {
+    animation-delay: 0.25s;
+}
+
+.map-badge-inprogress:nth-of-type(3n) {
+    animation-delay: 0.5s;
+}
+
+@keyframes lupaBlinkPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: drop-shadow(0 0 3px rgba(56, 189, 248, 0.6));
+    }
+    50% {
+        opacity: 0.2;
+        transform: scale(1.14);
+        filter: drop-shadow(0 0 16px rgba(56, 189, 248, 1)) brightness(1.4);
+    }
+}
+
+.map-badge-inprogress:hover,
+.map-badge-inprogress.badge-active {
+    animation: none !important;
+    opacity: 1 !important;
+}
+
 /* Loyiha list rows */
 .loyiha-item-row {
     display: flex;
@@ -4419,6 +4451,23 @@ html, body {
     fill: #0284C7 !important;
     stroke: #FFFFFF !important;
     stroke-width: 2px !important;
+}
+
+[data-theme="light"] .map-badge-inprogress {
+    animation: lupaBlinkPulseLight 1.5s ease-in-out infinite;
+}
+
+@keyframes lupaBlinkPulseLight {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: drop-shadow(0 0 3px rgba(2, 132, 199, 0.6));
+    }
+    50% {
+        opacity: 0.2;
+        transform: scale(1.14);
+        filter: drop-shadow(0 0 14px rgba(2, 132, 199, 0.95)) brightness(1.25);
+    }
 }
 
 /* Tumanlar xaritasi (Tahlil va Tadqiqot bo'limlarida) - Musaffo och yashil */
